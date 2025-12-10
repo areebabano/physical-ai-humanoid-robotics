@@ -1,4 +1,5 @@
 ---
+id: module_3_5
 title: "Module 3.5 - Chapter 5: Advanced Perception and AI in Isaac Sim"
 sidebar_position: 5
 ---

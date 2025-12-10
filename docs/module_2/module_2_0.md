@@ -1,4 +1,5 @@
 ---
+id: module_2_0
 title: "Module 2.0 - Introduction to Simulation for Humanoid Robotics"
 sidebar_position: 0
 ---

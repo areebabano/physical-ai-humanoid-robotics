@@ -1,4 +1,5 @@
 ---
+id: module_3_0
 title: "Module 3.0 - Introduction to Isaac Sim for Humanoid Robotics"
 sidebar_position: 0
 ---

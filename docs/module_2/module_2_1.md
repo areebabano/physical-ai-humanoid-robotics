@@ -1,4 +1,5 @@
 ---
+id: module_2_1
 title: "Module 2.1 - Chapter 1: Gazebo Simulation"
 sidebar_position: 1
 ---

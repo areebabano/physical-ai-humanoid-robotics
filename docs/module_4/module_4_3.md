@@ -1,4 +1,5 @@
 ---
+id: module_4_3
 title: "Module 4.3 - Chapter 3: Whole-Body Control"
 sidebar_position: 3
 ---

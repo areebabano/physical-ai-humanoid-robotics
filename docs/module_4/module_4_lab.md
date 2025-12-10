@@ -1,4 +1,5 @@
 ---
+id: module_4_lab
 title: "Module 4 Lab - Humanoid Control Systems Lab"
 sidebar_position: 6
 ---

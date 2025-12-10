@@ -1,4 +1,5 @@
 ---
+id: module_0_overview
 title: "Overview – Physical AI & Humanoid Robotics"
 sidebar_position: 0
 ---

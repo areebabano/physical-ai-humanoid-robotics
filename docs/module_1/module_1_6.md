@@ -1,4 +1,5 @@
 ---
+id: module_1_6
 title: "Module 1.6 - Chapter 6: Integration & Applications"
 sidebar_position: 6
 ---

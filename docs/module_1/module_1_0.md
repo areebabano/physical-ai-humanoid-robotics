@@ -1,4 +1,5 @@
 ---
+id: module_1_0
 title: "Module 1.0 - Introduction to ROS 2 for Humanoid Robotics"
 sidebar_position: 0
 ---

@@ -1,4 +1,5 @@
 ---
+id: module_1_2
 title: "Module 1.2 - Chapter 2: ROS 2 Packages"
 sidebar_position: 2
 ---

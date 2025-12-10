@@ -1,4 +1,5 @@
 ---
+id: module_2_5
 title: "Module 2.5 - Chapter 5: Simulation Integration with ROS 2"
 sidebar_position: 5
 ---

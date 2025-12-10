@@ -1,4 +1,5 @@
 ---
+id: module_3_4
 title: "Module 3.4 - Chapter 4: ROS 2 Bridge Integration"
 sidebar_position: 4
 ---

@@ -1,4 +1,5 @@
 ---
+id: module_2_lab
 title: "Module 2 Lab - Hands-On Simulation for Humanoid Robotics"
 sidebar_position: 8
 ---

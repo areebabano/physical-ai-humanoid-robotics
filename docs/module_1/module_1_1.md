@@ -1,4 +1,5 @@
 ---
+id: module_1_1
 title: "Module 1.1 - Chapter 1: ROS 2 Fundamentals"
 sidebar_position: 1
 ---

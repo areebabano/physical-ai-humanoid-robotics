@@ -1,4 +1,5 @@
 ---
+id: module_3_lab
 title: "Module 3 Lab - Complete Isaac Sim AI Integration"
 sidebar_position: 6
 ---

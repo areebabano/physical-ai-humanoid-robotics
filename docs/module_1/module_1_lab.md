@@ -1,4 +1,5 @@
 ---
+id: module_1_lab
 title: "Module 1 Lab - Hands-On ROS 2 for Humanoid Robotics"
 sidebar_position: 7
 ---

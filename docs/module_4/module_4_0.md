@@ -1,4 +1,5 @@
 ---
+id: module_4_0
 title: "Module 4.0 - Introduction to Humanoid Control Systems"
 sidebar_position: 0
 ---

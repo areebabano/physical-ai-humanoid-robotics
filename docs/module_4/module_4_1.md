@@ -1,4 +1,5 @@
 ---
+id: module_4_1
 title: "Module 4.1 - Chapter 1: Balance and Posture Control"
 sidebar_position: 1
 ---

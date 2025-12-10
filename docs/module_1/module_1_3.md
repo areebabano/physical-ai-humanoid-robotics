@@ -1,4 +1,5 @@
 ---
+id: module_1_3
 title: "Module 1.3 - Chapter 3: ROS 2 Services and Actions"
 sidebar_position: 3
 ---

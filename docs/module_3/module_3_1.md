@@ -1,4 +1,5 @@
 ---
+id: module_3_1
 title: "Module 3.1 - Chapter 1: Isaac Sim Basics"
 sidebar_position: 1
 ---

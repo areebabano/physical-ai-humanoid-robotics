@@ -1,4 +1,5 @@
 ---
+id: module_2_4
 title: "Module 2.4 - Chapter 4: Sensor Simulation"
 sidebar_position: 4
 ---

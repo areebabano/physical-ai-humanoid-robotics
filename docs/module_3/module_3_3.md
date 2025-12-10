@@ -1,4 +1,5 @@
 ---
+id: module_3_3
 title: "Module 3.3 - Chapter 3: Isaac Sim Python API"
 sidebar_position: 3
 ---

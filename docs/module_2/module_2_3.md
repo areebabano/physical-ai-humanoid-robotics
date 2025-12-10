@@ -1,4 +1,5 @@
 ---
+id: module_2_3
 title: "Module 2.3 - Chapter 3: Physics Parameters and Realism"
 sidebar_position: 3
 ---

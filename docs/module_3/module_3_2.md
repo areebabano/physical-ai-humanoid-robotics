@@ -1,4 +1,5 @@
 ---
+id: module_3_2
 title: "Module 3.2 - Chapter 2: AI Perception & Reinforcement Learning"
 sidebar_position: 2
 ---
