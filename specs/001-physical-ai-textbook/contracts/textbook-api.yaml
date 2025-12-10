@@ -1,0 +1,320 @@
+# API Contract: Physical AI & Humanoid Robotics Textbook
+
+## Base URL
+`https://api.physical-ai-textbook.com` (or `http://localhost:8000` for development)
+
+## Authentication
+All authenticated endpoints require a Bearer token in the Authorization header:
+```
+Authorization: Bearer {jwt_token}
+```
+
+## 1. User Management
+
+### POST /api/auth/register
+Register a new user account.
+
+**Request:**
+```json
+{
+  "email": "user@example.com",
+  "name": "John Doe",
+  "password": "securePassword123",
+  "software_background": "intermediate",
+  "hardware_background": "beginner"
+}
+```
+
+**Response (201 Created):**
+```json
+{
+  "id": "uuid-string",
+  "email": "user@example.com",
+  "name": "John Doe",
+  "software_background": "intermediate",
+  "hardware_background": "beginner",
+  "preferred_language": "en",
+  "created_at": "2025-12-07T10:00:00Z"
+}
+```
+
+**Validation:**
+- Email must be valid format
+- Password must be at least 8 characters
+- Background values must be "beginner", "intermediate", or "advanced"
+
+### POST /api/auth/login
+Authenticate a user and return JWT token.
+
+**Request:**
+```json
+{
+  "email": "user@example.com",
+  "password": "securePassword123"
+}
+```
+
+**Response (200 OK):**
+```json
+{
+  "access_token": "jwt-token-string",
+  "token_type": "bearer",
+  "user": {
+    "id": "uuid-string",
+    "email": "user@example.com",
+    "name": "John Doe",
+    "preferred_language": "en"
+  }
+}
+```
+
+### GET /api/auth/profile
+Get authenticated user profile.
+
+**Response (200 OK):**
+```json
+{
+  "id": "uuid-string",
+  "email": "user@example.com",
+  "name": "John Doe",
+  "software_background": "intermediate",
+  "hardware_background": "beginner",
+  "preferred_language": "en",
+  "personalization_settings": {
+    "difficulty_preference": "intermediate",
+    "content_format_preference": ["text", "diagrams"],
+    "learning_pace": "moderate"
+  }
+}
+```
+
+## 2. Textbook Content
+
+### GET /api/textbook/modules
+Get all textbook modules.
+
+**Response (200 OK):**
+```json
+[
+  {
+    "id": "uuid-string",
+    "title": "Robotic Nervous System (ROS 2)",
+    "description": "Introduction to ROS 2 concepts and implementation",
+    "module_number": 1,
+    "weeks_duration": 3,
+    "programming_language": "Python",
+    "chapters_count": 2,
+    "created_at": "2025-12-07T10:00:00Z"
+  }
+]
+```
+
+### GET /api/textbook/modules/{module_id}/chapters
+Get all chapters for a specific module.
+
+**Response (200 OK):**
+```json
+[
+  {
+    "id": "uuid-string",
+    "title": "ROS 2 Fundamentals",
+    "slug": "ros-2-fundamentals",
+    "module_id": "module-uuid",
+    "chapter_number": 1,
+    "learning_objectives": [
+      "Understand ROS 2 nodes, topics, and services",
+      "Implement basic communication patterns"
+    ],
+    "estimated_reading_time": 45,
+    "created_at": "2025-12-07T10:00:00Z"
+  }
+]
+```
+
+### GET /api/textbook/chapters/{chapter_id}
+Get specific chapter content.
+
+**Response (200 OK):**
+```json
+{
+  "id": "uuid-string",
+  "title": "ROS 2 Fundamentals",
+  "content": "# ROS 2 Fundamentals\n\n## Introduction\n...",
+  "module_id": "module-uuid",
+  "chapter_number": 1,
+  "learning_objectives": ["objective1", "objective2"],
+  "exercises": [
+    {
+      "id": "exercise-uuid",
+      "type": "coding",
+      "question": "Implement a basic publisher node",
+      "difficulty": "intermediate"
+    }
+  ],
+  "translations_available": ["en", "ur"]
+}
+```
+
+## 3. RAG Chatbot
+
+### POST /api/chatbot/query
+Query the textbook content using RAG.
+
+**Headers:**
+```
+Content-Type: application/json
+Authorization: Bearer {jwt_token} (optional)
+```
+
+**Request:**
+```json
+{
+  "query": "Explain how ROS 2 nodes communicate with each other",
+  "user_id": "optional-uuid-string"
+}
+```
+
+**Response (200 OK):**
+```json
+{
+  "query": "Explain how ROS 2 nodes communicate with each other",
+  "answer": "ROS 2 nodes communicate through topics, services, and actions...",
+  "sources": [
+    {
+      "chapter_id": "chapter-uuid",
+      "chapter_title": "ROS 2 Fundamentals",
+      "relevance_score": 0.92
+    }
+  ],
+  "timestamp": "2025-12-07T10:00:00Z"
+}
+```
+
+**Error Response (400 Bad Request):**
+```json
+{
+  "error": "Query too short or invalid",
+  "details": "Please provide a more specific question"
+}
+```
+
+## 4. Personalization
+
+### PUT /api/personalization/settings
+Update user personalization settings.
+
+**Request:**
+```json
+{
+  "preferred_language": "ur",
+  "difficulty_preference": "advanced",
+  "content_format_preference": ["video", "text", "diagrams"],
+  "learning_pace": "fast"
+}
+```
+
+**Response (200 OK):**
+```json
+{
+  "message": "Personalization settings updated successfully",
+  "updated_settings": {
+    "preferred_language": "ur",
+    "difficulty_preference": "advanced",
+    "content_format_preference": ["video", "text", "diagrams"],
+    "learning_pace": "fast"
+  }
+}
+```
+
+### GET /api/personalization/recommendations
+Get content recommendations based on user profile.
+
+**Response (200 OK):**
+```json
+{
+  "recommended_chapters": [
+    {
+      "chapter_id": "chapter-uuid",
+      "title": "Advanced ROS 2 Patterns",
+      "module_title": "Robotic Nervous System (ROS 2)",
+      "relevance_score": 0.87,
+      "estimated_time": 30
+    }
+  ],
+  "recommended_exercises": [
+    {
+      "exercise_id": "exercise-uuid",
+      "title": "ROS 2 Action Server Implementation",
+      "difficulty": "advanced",
+      "chapter_title": "ROS 2 Packages"
+    }
+  ]
+}
+```
+
+## 5. Translation
+
+### POST /api/translation/toggle
+Toggle content language preference.
+
+**Request:**
+```json
+{
+  "target_language": "ur"
+}
+```
+
+**Response (200 OK):**
+```json
+{
+  "message": "Language preference updated",
+  "current_language": "ur",
+  "fallback_language": "en"
+}
+```
+
+### GET /api/translation/available/{content_id}
+Get available translations for specific content.
+
+**Response (200 OK):**
+```json
+{
+  "content_id": "content-uuid",
+  "available_languages": [
+    {
+      "language_code": "en",
+      "language_name": "English",
+      "is_primary": true
+    },
+    {
+      "language_code": "ur",
+      "language_name": "Urdu",
+      "is_primary": false,
+      "completeness": 0.95
+    }
+  ]
+}
+```
+
+## Error Handling
+
+### Standard Error Format
+```json
+{
+  "error": "Error type or message",
+  "message": "Human-readable error description",
+  "details": "Additional error details (optional)",
+  "timestamp": "2025-12-07T10:00:00Z",
+  "request_id": "unique-request-identifier"
+}
+```
+
+### Common HTTP Status Codes
+- `200 OK` - Request successful
+- `201 Created` - Resource created successfully
+- `400 Bad Request` - Invalid request format or parameters
+- `401 Unauthorized` - Authentication required or invalid
+- `403 Forbidden` - Insufficient permissions
+- `404 Not Found` - Requested resource doesn't exist
+- `429 Too Many Requests` - Rate limit exceeded
+- `500 Internal Server Error` - Server error occurred

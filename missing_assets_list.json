@@ -1,0 +1,186 @@
+{
+  "module_4": {
+    "module_4_0": [
+      {
+        "asset": "hierarchical_control_architecture_light.svg",
+        "description": "Hierarchical Control Architecture for Humanoid Robots",
+        "location": "docs/module_4/module_4_0.md",
+        "dark_variant": "hierarchical_control_architecture_dark.svg"
+      },
+      {
+        "asset": "state_space_representation_light.svg",
+        "description": "State Space Representation for Humanoid Robots",
+        "location": "docs/module_4/module_4_0.md",
+        "dark_variant": "state_space_representation_dark.svg"
+      },
+      {
+        "asset": "equation_of_motion_light.svg",
+        "description": "Equation of Motion for Humanoid Robots",
+        "location": "docs/module_4/module_4_0.md",
+        "dark_variant": "equation_of_motion_dark.svg"
+      },
+      {
+        "asset": "zmp_concept_light.svg",
+        "description": "Zero Moment Point (ZMP) Concept for Humanoid Balance",
+        "location": "docs/module_4/module_4_0.md",
+        "dark_variant": "zmp_concept_dark.svg"
+      },
+      {
+        "asset": "control_strategies_comparison_light.svg",
+        "description": "Comparison of Control Strategies for Humanoid Robots",
+        "location": "docs/module_4/module_4_0.md",
+        "dark_variant": "control_strategies_comparison_dark.svg"
+      },
+      {
+        "asset": "sim_vs_real_comparison_light.svg",
+        "description": "Simulation vs Real-World Challenges in Humanoid Robotics",
+        "location": "docs/module_4/module_4_0.md",
+        "dark_variant": "sim_vs_real_comparison_dark.svg"
+      },
+      {
+        "asset": "control_design_process_light.svg",
+        "description": "Control System Design Process for Humanoid Robots",
+        "location": "docs/module_4/module_4_0.md",
+        "dark_variant": "control_design_process_dark.svg"
+      },
+      {
+        "asset": "control_frameworks_ecosystem_light.svg",
+        "description": "Humanoid Control Frameworks and Tools Ecosystem",
+        "location": "docs/module_4/module_4_0.md",
+        "dark_variant": "control_frameworks_ecosystem_dark.svg"
+      },
+      {
+        "asset": "humanoid_safety_protocols_light.svg",
+        "description": "Safety Protocols for Humanoid Control Systems",
+        "location": "docs/module_4/module_4_0.md",
+        "dark_variant": "humanoid_safety_protocols_dark.svg"
+      },
+      {
+        "asset": "control_performance_metrics_light.svg",
+        "description": "Performance Metrics for Humanoid Control Systems",
+        "location": "docs/module_4/module_4_0.md",
+        "dark_variant": "control_performance_metrics_dark.svg"
+      }
+    ],
+    "module_4_1": [
+      {
+        "asset": "humanoid_balance_concepts_light.svg",
+        "description": "Humanoid Balance Concepts: Static vs Dynamic Stability",
+        "location": "docs/module_4/module_4_1.md",
+        "dark_variant": "humanoid_balance_concepts_dark.svg"
+      },
+      {
+        "asset": "zmp_theory_illustration_light.svg",
+        "description": "Zero Moment Point (ZMP) Theory for Humanoid Balance",
+        "location": "docs/module_4/module_4_1.md",
+        "dark_variant": "zmp_theory_illustration_dark.svg"
+      },
+      {
+        "asset": "inverted_pendulum_models_light.svg",
+        "description": "Inverted Pendulum Models for Humanoid Balance Control",
+        "location": "docs/module_4/module_4_1.md",
+        "dark_variant": "inverted_pendulum_models_dark.svg"
+      },
+      {
+        "asset": "balance_control_strategies_light.svg",
+        "description": "Balance Control Strategies for Humanoid Robots",
+        "location": "docs/module_4/module_4_1.md",
+        "dark_variant": "balance_control_strategies_dark.svg"
+      },
+      {
+        "asset": "whole_body_balance_control_light.svg",
+        "description": "Whole-Body Balance Control for Humanoid Robots",
+        "location": "docs/module_4/module_4_1.md",
+        "dark_variant": "whole_body_balance_control_dark.svg"
+      },
+      {
+        "asset": "balance_recovery_strategies_light.svg",
+        "description": "Balance Recovery Strategies for Humanoid Robots",
+        "location": "docs/module_4/module_4_1.md",
+        "dark_variant": "balance_recovery_strategies_dark.svg"
+      },
+      {
+        "asset": "advanced_balance_control_techniques_light.svg",
+        "description": "Advanced Balance Control Techniques for Humanoid Robots",
+        "location": "docs/module_4/module_4_1.md",
+        "dark_variant": "advanced_balance_control_techniques_dark.svg"
+      }
+    ]
+  },
+  "module_3": {
+    "module_3_0": [
+      {
+        "asset": "isaac_sim_architecture_light.svg",
+        "description": "Isaac Sim Architecture for Humanoid Robotics",
+        "location": "docs/module_3/module_3_0.md",
+        "dark_variant": "isaac_sim_architecture_dark.svg"
+      },
+      {
+        "asset": "simulation_pipeline_light.svg",
+        "description": "Isaac Sim Simulation Pipeline",
+        "location": "docs/module_3/module_3_0.md",
+        "dark_variant": "simulation_pipeline_dark.svg"
+      }
+    ],
+    "module_3_1": [
+      {
+        "asset": "photorealistic_rendering_light.svg",
+        "description": "Photorealistic Rendering in Isaac Sim",
+        "location": "docs/module_3/module_3_1.md",
+        "dark_variant": "photorealistic_rendering_dark.svg"
+      },
+      {
+        "asset": "sensor_simulation_light.svg",
+        "description": "Advanced Sensor Simulation in Isaac Sim",
+        "location": "docs/module_3/module_3_1.md",
+        "dark_variant": "sensor_simulation_dark.svg"
+      }
+    ]
+  },
+  "module_2": {
+    "module_2_0": [
+      {
+        "asset": "simulation_architecture_light.svg",
+        "description": "Simulation Architecture for Humanoid Robotics",
+        "location": "docs/module_2/module_2_0.md",
+        "dark_variant": "simulation_architecture_dark.svg"
+      },
+      {
+        "asset": "gazebo_environment_light.svg",
+        "description": "Gazebo Simulation Environment for Humanoid Robots",
+        "location": "docs/module_2/module_2_0.md",
+        "dark_variant": "gazebo_environment_dark.svg"
+      }
+    ],
+    "module_2_1": [
+      {
+        "asset": "robot_modeling_light.svg",
+        "description": "URDF/XACRO Robot Modeling for Humanoid Robots",
+        "location": "docs/module_2/module_2_1.md",
+        "dark_variant": "robot_modeling_dark.svg"
+      },
+      {
+        "asset": "kinematics_visualization_light.svg",
+        "description": "Forward and Inverse Kinematics Visualization",
+        "location": "docs/module_2/module_2_1.md",
+        "dark_variant": "kinematics_visualization_dark.svg"
+      }
+    ]
+  },
+  "module_1": {
+    "module_1_0": [
+      {
+        "asset": "ros2_architecture_light.svg",
+        "description": "ROS 2 Architecture for Humanoid Robotics",
+        "location": "docs/module_1/module_1_0.md",
+        "dark_variant": "ros2_architecture_dark.svg"
+      },
+      {
+        "asset": "communication_patterns_light.svg",
+        "description": "ROS 2 Communication Patterns",
+        "location": "docs/module_1/module_1_0.md",
+        "dark_variant": "communication_patterns_dark.svg"
+      }
+    ]
+  }
+}

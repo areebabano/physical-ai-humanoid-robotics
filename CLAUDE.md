@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- JavaScript/TypeScript (ES2022), Python 3.11, C# (Unity) + Docusaurus, OpenAI ChatKit/Agents SDK, FastAPI, Better-Auth, Qdrant Cloud client, Neon serverless Postgres (001-physical-ai-textbook)
+- Neon serverless Postgres for user data, Qdrant Cloud for vector search, GitHub Pages for static content (001-physical-ai-textbook)
+
+## Recent Changes
+- 001-physical-ai-textbook: Added JavaScript/TypeScript (ES2022), Python 3.11, C# (Unity) + Docusaurus, OpenAI ChatKit/Agents SDK, FastAPI, Better-Auth, Qdrant Cloud client, Neon serverless Postgres

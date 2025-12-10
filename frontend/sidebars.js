@@ -1,24 +1,19 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+// @ts-check
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
-/**
- * Creating a sidebar enables you to:
- - create an ordered group of docs
- - render a sidebar for each doc of that group
- - provide next/previous navigation
-
- The sidebars can be generated from the filesystem, or explicitly defined here.
-
- Create as many sidebars as you want.
- */
-const sidebars: SidebarsConfig = {
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+const sidebars = {
   textbookSidebar: [
     {
       type: 'category',
-      label: 'Module 0 – Overview',
+      label: 'Overview (Module 0)',
       items: [
-        'module_0_overview'
+        'module_0_overview',
+        'module_0/module_0_0',
+        'module_0/module_0_1',
+        'module_0/module_0_2',
+        'module_0/module_0_3',
+        'module_0/module_0_4',
+        'module_0/module_0_5'
       ]
     },
     {
