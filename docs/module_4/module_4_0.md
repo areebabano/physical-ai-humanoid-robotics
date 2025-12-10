@@ -3,6 +3,9 @@ title: "Module 4.0 - Introduction to Humanoid Control Systems"
 sidebar_position: 0
 ---
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
 # Module 4.0 - Introduction to Humanoid Control Systems
 
 ## Overview

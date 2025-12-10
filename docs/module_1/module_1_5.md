@@ -205,58 +205,6 @@ class SensorPollingNode(Node):
 :::tip
 Choose timer frequencies appropriate for your application: high frequency (100Hz+) for control loops, medium frequency (10-50Hz) for sensor data, and low frequency (1-10Hz) for diagnostics and logging.
 :::
-        self.diag_timer = self.create_timer(1.0, self.diag_callback)
-
-        self.control_counter = 0
-        self.status_counter = 0
-        self.diag_counter = 0
-
-    def control_callback(self):
-        # High-frequency control logic
-        self.control_counter += 1
-        self.get_logger().debug(f'Control tick: {self.control_counter}')
-
-    def status_callback(self):
-        # Medium-frequency status updates
-        self.status_counter += 1
-        self.get_logger().info(f'Status tick: {self.status_counter}')
-
-    def diag_callback(self):
-        # Low-frequency diagnostic checks
-        self.diag_counter += 1
-        self.get_logger().info(f'Diagnostic tick: {self.diag_counter}')
-```
-
-### Timer-Based Sensor Polling
-
-In robotics, timers are commonly used for sensor polling:
-
-```python
-import rclpy
-from rclpy.node import Node
-from sensor_msgs.msg import JointState
-import random
-
-
-class SensorPollingNode(Node):
-    def __init__(self):
-        super().__init__('sensor_polling_node')
-        self.joint_pub = self.create_publisher(JointState, 'joint_states', 10)
-
-        # Simulate sensor polling at 50Hz (20ms)
-        self.polling_timer = self.create_timer(0.02, self.poll_sensors)
-
-    def poll_sensors(self):
-        """Simulate polling joint position sensors"""
-        msg = JointState()
-        msg.header.stamp = self.get_clock().now().to_msg()
-        msg.name = ['joint1', 'joint2', 'joint3']
-        msg.position = [random.uniform(-3.14, 3.14) for _ in range(3)]
-        msg.velocity = [random.uniform(-1.0, 1.0) for _ in range(3)]
-        msg.effort = [random.uniform(-10.0, 10.0) for _ in range(3)]
-
-        self.joint_pub.publish(msg)
-```
 
 ## 5.3 Callback Types
 

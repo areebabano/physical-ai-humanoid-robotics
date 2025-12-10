@@ -3,6 +3,9 @@ title: "Module 4.1 - Chapter 1: Balance and Posture Control"
 sidebar_position: 1
 ---
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
 # Module 4.1 - Balance and Posture Control
 
 ## Overview
