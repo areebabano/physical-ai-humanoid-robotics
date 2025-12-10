@@ -11,9 +11,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://areebabano.github.io',
-baseUrl: '/physical-ai-humanoid-robotics/',
-trailingSlash: true,
+  url: 'https://physical-ai-humanoid-robotics-book.com',
+  baseUrl: '/',
 
   organizationName: 'physical-ai-humanoid-robotics',
   projectName: 'physical-ai-humanoid-robotics',
