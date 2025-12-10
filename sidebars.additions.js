@@ -4,7 +4,7 @@ module.exports = {
       type: 'category',
       label: 'Module 0 – Overview',
       items: [
-        'module_0_overview',
+        'module_0/module_0_overview',
         'module_0/module_0_0',
         'module_0/module_0_1',
         'module_0/module_0_2',

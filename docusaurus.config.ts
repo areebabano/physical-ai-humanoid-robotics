@@ -18,7 +18,13 @@ const config: Config = {
   projectName: 'physical-ai-humanoid-robotics',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    mermaid: true,
+    parseFrontMatter: undefined,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -70,7 +76,7 @@ const config: Config = {
     navbar: {
   title: 'PHYSICAL AI & HUMANOID ROBOTICS',
   items: [
-    { type: 'doc', docId: 'module_0_overview', label: 'Modules / Overview', position: 'left' },
+    { type: 'doc', docId: 'module_0/module_0_overview', label: 'Modules / Overview', position: 'left' },
     { href: 'https://github.com/physical-ai-humanoid-robotics/physical-ai-humanoid-robotics', label: 'GitHub', position: 'right' },
     { type: 'search', position: 'right' },
   ],
@@ -84,7 +90,7 @@ const config: Config = {
       items: [
         {
           label: 'Modules Overview',
-          to: '/module_0_overview'
+          to: '/module_0/module_0_overview'
         },
         {
           label: 'GitHub Repository',
