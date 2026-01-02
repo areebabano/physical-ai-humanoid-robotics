@@ -1,0 +1,65 @@
+# Task: Integrate RAG Chatbot using Gemini API in existing Docusaurus Book
+
+## Project Overview
+
+We have a published Docusaurus book "Physical AI & Humanoid Robotics". The goal is to integrate a fully functional RAG (Retrieval-Augmented Generation) chatbot. The chatbot must:
+
+- Answer user questions based on the book content.
+- Support answering based on **selected text** from the book.
+- Use FastAPI backend for API endpoints.
+- Store embeddings and retrieval data in Qdrant Cloud Free Tier.
+- Use Gemini API (free key) for chat completion, replacing OpenAI API key.
+
+## Instructions for Claude
+
+1. **Backend (.env & API)**
+   - Update `.env` to include Gemini API key and endpoint:
+     ```
+     GEMINI_API_KEY=your_gemini_api_key_here
+     GEMINI_API_URL=https://api.gemini.com/v1/chatcompletion
+     ```
+   - Keep Qdrant and Neon Postgres config intact.
+   - Modify FastAPI backend to use Gemini API for ChatCompletion instead of OpenAI.
+   - Ensure selected text from frontend is sent as **high-priority context** to the Gemini API.
+
+2. **RAG Pipeline**
+   - Ingest content from `docs/` directory.
+   - Chunk content intelligently (200-500 words per chunk, preserve context).
+   - Generate embeddings (use Gemini-compatible embedding API or OpenAI-compatible embeddings if supported).
+   - Store embeddings in Qdrant with rich metadata (chapter, section, headings).
+
+3. **Chat Endpoint**
+   - `/api/chatbot/chat` should accept JSON payload:
+     ```json
+     {
+       "question": "User question here",
+       "selected_text": "Optional text selected by user"
+     }
+     ```
+   - Retrieve top relevant chunks from Qdrant.
+   - Merge retrieved chunks with `selected_text` as priority context.
+   - Call Gemini API for chat completion.
+   - Return response with numbered citations `[Source X]` for referenced content.
+
+4. **Frontend Integration**
+   - Ensure React Chatbot Widget passes selected text and user question to backend.
+   - Maintain draggable, responsive, and accessible UI.
+   - Display sources in chat response.
+
+5. **Caching, Rate-Limiting, and Logging**
+   - Implement caching for repeated questions (1-hour expiration).
+   - Implement rate-limiting per user.
+   - Log all interactions to Neon Postgres (questions, responses, timestamps).
+
+6. **Validation & Testing**
+   - Include response validation to prevent hallucinations.
+   - Include automated tests for ingestion, retrieval, chat completion, and selected text integration.
+
+## Output Expected from Claude
+
+- Updated `.env` file for Gemini API.
+- FastAPI backend code for chat endpoint using Gemini.
+- RAG ingestion and embedding pipeline compatible with Gemini.
+- Frontend widget integration instructions (React/Docusaurus plugin).
+- Test scripts for end-to-end validation.
+

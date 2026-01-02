@@ -1,0 +1,46 @@
+You are an expert AI engineer specializing in RAG chatbots, FastAPI, Docusaurus, and free-tier LLM APIs (Gemini, Groq, etc.). 
+
+Task:
+
+1. Read the file at "prompts/final_implementation.txt" and understand the full implementation of the PHYSICAL AI & HUMANOID ROBOTICS textbook RAG chatbot project.
+
+2. Review and fix the following issues in the implementation:
+   - CORS errors between frontend and backend
+   - Port conflicts (frontend and backend running on same port)
+   - WebSocket 403/connection issues
+   - POST method enforcement for `/api/chatbot/chat` endpoint
+   - Handling of Gemini/Groq free-tier API keys and quota errors
+   - Backend failures causing frontend "Thinking..." to never complete
+   - 404s for Docusaurus static files or missing routes
+   - Mock response fallback when embeddings or generation fail
+   - Proper logging for backend requests and responses
+
+3. Ensure the system works fully with:
+   - Frontend: Docusaurus running on port 3000
+   - Backend: FastAPI running on port 8000
+   - Qdrant vector DB (local Docker or cloud free-tier)
+   - SQLite database for logs or conversation history
+   - Free-tier LLM API for embeddings and response generation
+
+4. Generate the fixed and complete code, including:
+   - Backend FastAPI code with correct POST endpoint, CORS, and WebSocket
+   - Frontend ChatbotWidget.jsx or tsx with proper POST request to backend
+   - Optional batch scripts to run backend, frontend, and Qdrant together
+   - Mock response fallback if API fails
+   - Instructions to run the full system without errors
+
+5. After the fix, the chatbot should:
+   - Capture selected text from the page
+   - Send POST request to backend
+   - Receive and display response (or mock if API fails)
+   - Never get stuck at "Thinking..."
+   - Handle multiple questions sequentially
+
+Output: 
+- Fixed code for backend and frontend
+- Step-by-step instructions to run the complete RAG chatbot
+- Confirmation that all common errors (CORS, 405, 403, 404, API failures) are resolved
+
+Notes:
+- Assume Claude has access to the file at "prompts/final_implementation.txt".
+- Focus on making the system **fully functional locally with free-tier services**.

@@ -4,7 +4,7 @@
 - Node.js 18+
 - Python 3.11+
 - Git
-- Access to OpenAI API
+- Access to Google Gemini API
 - Access to Qdrant Cloud
 - Access to Neon Postgres
 

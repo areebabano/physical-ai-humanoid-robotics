@@ -1,0 +1,61 @@
+You are tasked to fully update and implement my RAG chatbot project with a **professional, eye-catching frontend UI**. 
+
+**Current backend files to use and update**: 
+1. content_ingestion.py
+2. retrieval_test.py
+3. agent_system.py
+
+**Strict Instructions**:
+
+1. **Backend Updates**:
+   - Use the above 3 backend files and **update them so they work smoothly together**.
+   - **content_ingestion.py**: 
+       - Fetch all URLs from sitemap (SITEMAP_URL in .env)
+       - Extract page text efficiently using free tools
+       - Chunk text into reasonable sizes
+       - Generate embeddings using **Cohere free embed-english-v3.0**
+       - Store embeddings and chunks in **Qdrant**
+       - Ensure fast, stable processing even for large pages
+   - **retrieval_test.py**:
+       - Test Qdrant retrieval
+       - Return top 5 relevant chunks with score, URL, and text
+   - **agent_system.py**:
+       - Implement a RAG chatbot using Qdrant retrieval
+       - Agent answers only from retrieved chunks
+       - Use **free APIs only**
+       - Ensure smooth, fully working system
+
+2. **Frontend UI**:
+   - Build a **modern, eye-catching interface** using HTML/CSS/JS or a lightweight framework (e.g., Streamlit, React, or Next.js)
+   - Features:
+       - Chat window for user queries
+       - Display chatbot responses with timestamps
+       - Show retrieved source URLs on hover or below the answer
+       - Responsive and visually appealing (colors, fonts, spacing)
+       - Clear input box and send button
+   - Connect frontend seamlessly to backend (agent_system.py)
+   - Simple, clean, professional; no extra pages
+
+3. **Project Cleanup – STRICT**:
+   - Delete all **old/unnecessary files and folders** from previous versions
+   - Keep only the 3 updated backend files + frontend UI
+   - Remove any files that are broken, unused, or cause conflicts
+   - Ensure **no conflicts or errors** remain from prior versions
+
+4. **General Requirements**:
+   - Use `.env` for all API keys (Cohere, Qdrant)
+   - Clean folder structure; organized and minimal
+   - Fully working system locally
+   - Provide instructions to run backend + frontend
+
+**Output**:
+- Updated backend files: content_ingestion.py, retrieval_test.py, agent_system.py
+- Fully designed frontend UI folder/files
+- Clear instructions to run the full RAG chatbot system with backend + UI
+
+**Additional Instructions**:
+- Integrated RAG Chatbot Development: The chatbot must answer user questions about the book’s content, **using only the retrieved text selected by the user**.
+- Use FastAPI for the backend, Qdrant Cloud Free Tier for vector storage, and Cohere free embeddings.
+- The system must be complete, ready-to-run, and error-free.
+
+**STRICTLY**: Delete all unnecessary files/folders. Keep only working backend files + frontend UI. Ensure **no conflicts, missing dependencies, or runtime errors** occur.

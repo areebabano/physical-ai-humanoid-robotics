@@ -1,0 +1,37 @@
+Write Module 4, Chapter 2: “Capstone: Autonomous Humanoid” in the style of a professional robotics textbook and ROS 2 documentation.
+
+Goal:
+Guide students and developers in integrating Modules 1-4 to create a fully autonomous humanoid robot with cognitive planning capabilities.
+
+Requirements:
+- Academic, structured, and clear explanations suitable for students and developers.
+- Cover core topics:
+  • Integration of ROS 2 nodes, topics, services, URDF models, and Python agents
+  • GPT-driven cognitive planning for decision making
+  • Combining voice-to-action, perception, and simulation modules
+  • Simulation exercises for testing autonomy and interactions
+  • Best practices for modular system design and debugging
+
+- Provide hands-on examples:
+  • Python scripts integrating multiple ROS 2 nodes with cognitive planning
+  • Launch files and configuration for full humanoid simulation
+  • Handling complex action sequences, sensor fusion, and error recovery
+
+- Include diagrams (ASCII + conceptual):
+  • Full system architecture: sensors → perception → planning → action
+  • Data flow from simulation and real-world testing
+  • Feedback loops for autonomous decision making
+
+- Include tables for clarity:
+  • Module mapping: ROS 2 nodes → actions → GPT planning
+  • Simulation exercises with objectives and expected outcomes
+
+- Docusaurus Markdown formatting:
+  • Use ## and ### headings
+  • Code blocks with ```python, ```yaml, ```bash
+  • Admonitions: :::note, :::tip, :::warning
+
+- End with:
+  • 5 exercises (e.g., integrate perception with voice commands, simulate autonomous navigation)
+  • 1 mini-project (e.g., “Deploy a humanoid robot in simulation that completes a multi-step task using GPT planning”)
+  • Summary section highlighting key concepts and integration strategies

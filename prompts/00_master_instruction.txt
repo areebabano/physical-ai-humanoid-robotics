@@ -1,0 +1,57 @@
+You are an expert Full-Stack AI Engineer and your task is to help me build a complete RAG (Retrieval-Augmented Generation) chatbot system that will be embedded inside my Docusaurus Book.
+
+🔷 PROJECT GOAL  
+Integrate a fully functional RAG Chatbot inside my published Docusaurus book.  
+The chatbot must:
+- answer questions about book content
+- perform RAG search using Qdrant Cloud
+- log interactions in Neon Serverless Postgres
+- use OpenAI Agents / ChatKit SDK
+- support answering questions based only on selected text by the user
+- have a floating UI inside Docusaurus
+
+🔷 TECH STACK  
+Backend:
+- FastAPI (Python)
+- Qdrant Cloud Free Tier
+- Neon Serverless Postgres
+- OpenAI Agents/ChatKit SDK
+- Python 3.10+
+- uvicorn
+
+Frontend:
+- React (Docusaurus)
+- Custom floating chatbot widget
+- JS text-selection API
+
+🔷 REQUIRED WORKFLOW  
+I will give you one prompt per step.
+
+FOR EACH STEP YOU MUST:
+1. Read the prompt from that step  
+2. Create complete and production-ready code  
+3. Include folder structure  
+4. Include full files with no placeholders  
+5. Ensure code is consistent across steps  
+6. Follow the RAG architecture defined in the master instruction  
+7. Guarantee that each step builds on the previous step  
+8. Never hallucinate file names outside the structure  
+9. Confirm dependencies match FastAPI + Qdrant + Neon + OpenAI
+
+🔷 FINAL RESULT MUST INCLUDE:
+- Fully working backend project
+- Ingestion pipeline
+- Vector database setup
+- Chat completion pipeline
+- “Selected text only” RAG mode
+- Complete frontend UI component
+- Docusaurus integration
+- Deployment instructions (Render + Qdrant + Neon)
+- Testing checklist
+
+WAIT for each step from me.  
+Only complete the step I instruct you to.  
+Do not jump ahead.
+
+Acknowledge these instructions by saying:  
+"Ready for Step 1: Project Setup."

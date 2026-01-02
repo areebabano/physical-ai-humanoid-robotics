@@ -1,0 +1,37 @@
+Write Module 4, Chapter 1: “Voice-to-Action” in the style of a professional robotics textbook and ROS 2 documentation.
+
+Goal:
+Teach robotics students and developers how to map natural language commands into ROS 2 actions for humanoid robot control.
+
+Requirements:
+- Academic, structured, and clear explanations suitable for students and developers.
+- Cover core topics:
+  • Natural Language Processing (NLP) for robotics
+  • Mapping voice commands to ROS 2 actions and services
+  • Speech-to-text conversion techniques
+  • Command parsing and intent recognition
+  • Integrating ROS 2 nodes with voice interfaces
+
+- Provide hands-on examples:
+  • Python example: subscribing to voice command topics and triggering ROS 2 actions
+  • Creating a simple voice-controlled action server and client
+  • Handling errors and ambiguous commands
+
+- Include diagrams (ASCII + conceptual):
+  • Voice input → NLP → ROS 2 action server → Robot action
+  • Command parsing pipeline
+  • Feedback loop from robot to voice interface
+
+- Include tables for clarity:
+  • Example voice commands and mapped ROS 2 actions
+  • Supported speech-to-text libraries and ROS 2 integration
+
+- Docusaurus Markdown formatting:
+  • Use ## and ### headings
+  • Code blocks with ```python, ```yaml, ```bash
+  • Admonitions: :::note, :::tip, :::warning
+
+- End with:
+  • 5 exercises (e.g., mapping commands to actions, building a simple voice-controlled robot)
+  • 1 mini-project (e.g., “Implement a humanoid robot that responds to voice commands using ROS 2 actions”)
+  • Summary section highlighting key concepts

@@ -1,0 +1,72 @@
+Step 4: React Chatbot Widget Integration
+Purpose
+
+Integrate a floating, interactive RAG chatbot widget into the Docusaurus book so users can ask questions about the book content.
+
+Instructions for Claude
+
+Create React Component
+
+src/components/ChatbotWidget.tsx
+
+Features:
+
+Floating button to toggle chat window
+
+Chat window with messages display
+
+Input field for user questions
+
+Optional: support for selected text from highlighted content
+
+Integrate API
+
+Connect widget to backend /api/chatbot/chat endpoint
+
+Send POST requests with question and selected text
+
+Display responses with citations in chat window
+
+Handle errors and loading states
+
+Styling & UX
+
+Modern, responsive design
+
+Mobile-friendly layout
+
+Smooth opening/closing animations
+
+Optional: draggable chat window
+
+Optional Features
+
+Highlight text on the page and pass as selected_text to backend
+
+Scroll chat to bottom on new messages
+
+Show typing indicator while awaiting response
+
+Persist chat history during session
+
+Validation
+
+Test chatbot on multiple pages in the Docusaurus book
+
+Ensure correct API responses and context integration
+
+Verify responsive behavior on desktop and mobile
+
+Output
+
+Claude should generate:
+
+Full ChatbotWidget.tsx React component
+
+Example integration into src/pages/index.tsx or Layout.tsx
+
+CSS or Tailwind styling for chat window and button
+
+Example usage instructions
+
+Optional text selection integration

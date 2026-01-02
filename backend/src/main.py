@@ -1,191 +1,162 @@
-"""
-Main FastAPI application for the Physical AI & Humanoid Robotics Textbook
-"""
-from fastapi import FastAPI, Depends, HTTPException, status
+# # from fastapi import FastAPI, WebSocket
+# # from fastapi.middleware.cors import CORSMiddleware
+# # from .api.chat import router as chat_router
+# # from .api.health import router as health_router
+# # from .websockets.ws_chat import websocket_endpoint
+# # from .core.config import settings, validate_settings
+# # from .core.logging import logger
+
+
+# # # Validate settings before creating the app
+# # validate_settings()
+
+# # # Create FastAPI app instance
+# # app = FastAPI(
+# #     title=settings.API_TITLE,
+# #     version=settings.API_VERSION
+# # )
+
+# # # Add CORS middleware
+# # app.add_middleware(
+# #     CORSMiddleware,
+# #     allow_origins=settings.ALLOWED_ORIGINS,
+# #     allow_credentials=True,
+# #     allow_methods=["*"],
+# #     allow_headers=["*"],
+# # )
+
+# # # Register API routers
+# # app.include_router(chat_router, prefix="/api/chatbot", tags=["chat"])
+# # app.include_router(health_router, tags=["health"])
+
+# # # Register WebSocket endpoint
+# # @app.websocket("/ws")
+# # async def ws_endpoint(websocket: WebSocket):
+# #     await websocket_endpoint(websocket)
+
+# # # Additional root endpoint
+# # @app.get("/")
+# # async def root():
+# #     return {"message": "Physical AI & Humanoid Robotics RAG Chatbot API - Use /api/chatbot/chat for REST or /ws for WebSocket"}
+
+
+# # if __name__ == "__main__":
+# #     import uvicorn
+# #     uvicorn.run(
+# #         "src.main:app",
+# #         host=settings.HOST,
+# #         port=settings.PORT,
+# #         reload=True  # Enable auto-reload for development
+# #     )
+
+# from fastapi import FastAPI, WebSocket
+# from fastapi.middleware.cors import CORSMiddleware
+# from .api.chat import router as chat_router
+# from .api.health import router as health_router
+# from .websockets.ws_chat import websocket_endpoint
+# from .core.config import settings, validate_settings
+# from .core.logging import logger
+
+# # Validate settings
+# validate_settings()
+
+# # Create FastAPI app
+# app = FastAPI(
+#     title=settings.API_TITLE,
+#     version=settings.API_VERSION
+# )
+
+# # CORS middleware
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=settings.ALLOWED_ORIGINS,
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+
+# # Register routers
+# app.include_router(chat_router, prefix="/api/chatbot", tags=["chat"])
+# app.include_router(health_router, tags=["health"])
+
+# # WebSocket
+# @app.websocket("/ws")
+# async def ws_endpoint(websocket: WebSocket):
+#     await websocket_endpoint(websocket)
+
+# # Root endpoint
+# @app.get("/")
+# async def root():
+#     return {"message": "Physical AI & Humanoid Robotics RAG Chatbot API - Use /api/chatbot/chat for REST or /ws for WebSocket"}
+
+from fastapi import FastAPI, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.middleware.gzip import GZipMiddleware
-from contextlib import asynccontextmanager
-import logging
-import os
-import sys
-from typing import AsyncGenerator
 
-from backend.src.database import init_db, close_db
-from backend.src.services.auth_service import get_current_user
-from backend.src.api.textbook_router import router as textbook_router
-from backend.src.api.chatbot_router import router as chatbot_router
-from backend.src.api.auth_router import router as auth_router
-from backend.src.api.translation_router import router as translation_router
-from backend.src.api.personalization_router import router as personalization_router
-from backend.src.api.exercise_router import router as exercise_router
-from backend.src.utils.error_handler import ErrorHandlingMiddleware, http_exception_handler, validation_exception_handler, general_exception_handler
-from fastapi.exceptions import RequestValidationError
-from starlette.exceptions import HTTPException as StarletteHTTPException
+# Import routers and websocket
+from .api.chat import router as chat_router
+from .api.health import router as health_router
+from .api.auth import router as auth_router
+from .websockets.ws_chat import websocket_endpoint
 
+# Import settings and logging
+from .core.config import settings, validate_settings
+from .core.logging import logger
 
-# Set up logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.StreamHandler(sys.stdout)
-    ]
-)
-logger = logging.getLogger(__name__)
+# Import database initialization
+from .database.init_db import create_db_and_tables
 
+# -----------------------------
+# Validate environment variables
+# -----------------------------
+validate_settings()
 
-@asynccontextmanager
-async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
-    """
-    Lifespan event handler for FastAPI
-    """
-    logger.info("Starting up the application...")
+# Create database tables
+create_db_and_tables()
 
-    # Initialize database
-    await init_db()
-    logger.info("Database initialized")
-
-    # Initialize other services if needed
-    # For example, initialize Qdrant connection, etc.
-
-    yield
-
-    # Cleanup
-    await close_db()
-    logger.info("Application shutdown complete")
-
-
-# Create FastAPI app with lifespan
+# -----------------------------
+# Create FastAPI app
+# -----------------------------
 app = FastAPI(
-    title="Physical AI & Humanoid Robotics Textbook API",
-    description="API for the Physical AI & Humanoid Robotics Textbook with RAG chatbot, personalization, and Urdu translation",
-    version="1.0.0",
-    lifespan=lifespan
+    title=settings.API_TITLE,
+    version=settings.API_VERSION
 )
 
-
-# Configure CORS middleware
-# In production, specify exact origins instead of wildcard
+# -----------------------------
+# CORS middleware
+# -----------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=os.getenv("ALLOWED_ORIGINS", "*").split(","),
+    allow_origins=settings.ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-    # Expose headers for client access
-    expose_headers=["Access-Control-Allow-Origin"]
 )
 
+# -----------------------------
+# Register REST API routers
+# -----------------------------
+app.include_router(chat_router, prefix="/api/chatbot", tags=["chat"])
+app.include_router(health_router, tags=["health"])
+app.include_router(auth_router)  # Authentication routes
 
-# Add GZip compression middleware
-app.add_middleware(
-    GZipMiddleware,
-    minimum_size=1000  # Compress responses larger than 1KB
-)
-
-
-# Add error handling middleware
-app.add_middleware(
-    ErrorHandlingMiddleware
-)
-
-
-# Add custom middleware for request logging
-@app.middleware("http")
-async def log_requests(request, call_next):
+# -----------------------------
+# WebSocket endpoint
+# -----------------------------
+@app.websocket("/ws")
+async def ws_endpoint(websocket: WebSocket):
     """
-    Middleware to log incoming requests
+    WebSocket endpoint for real-time chat
     """
-    logger.info(f"Request: {request.method} {request.url}")
-    response = await call_next(request)
-    logger.info(f"Response: {response.status_code}")
-    return response
+    await websocket_endpoint(websocket)
 
-
-# Add custom middleware for authentication (if needed globally)
-@app.middleware("http")
-async def add_current_user_to_request(request, call_next):
-    """
-    Middleware to add current user to request state if authenticated
-    """
-    # Extract token from headers if present
-    auth_header = request.headers.get("Authorization")
-    if auth_header and auth_header.startswith("Bearer "):
-        token = auth_header[7:]  # Remove "Bearer " prefix
-
-        # Try to get current user (this will fail silently if token is invalid)
-        try:
-            # In a real implementation, we'd validate the token here
-            # For now, we'll skip adding user to request state to avoid errors
-            pass
-        except:
-            # If token validation fails, continue without current user
-            pass
-
-    response = await call_next(request)
-    return response
-
-
-# Include API routers
-app.include_router(textbook_router, prefix="/api/textbook", tags=["textbook"])
-app.include_router(chatbot_router, prefix="/api/chatbot", tags=["chatbot"])
-app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
-app.include_router(translation_router, prefix="/api/translation", tags=["translation"])
-app.include_router(personalization_router, prefix="/api/personalization", tags=["personalization"])
-app.include_router(exercise_router, prefix="/api/exercise", tags=["exercise"])
-
-
-# Health check endpoint
-@app.get("/health", tags=["health"])
-async def health_check():
-    """
-    Health check endpoint to verify the API is running
-    """
-    return {
-        "status": "healthy",
-        "message": "Physical AI & Humanoid Robotics Textbook API is running"
-    }
-
-
+# -----------------------------
 # Root endpoint
-@app.get("/", tags=["root"])
-async def read_root():
-    """
-    Root endpoint with API information
-    """
+# -----------------------------
+@app.get("/", name="root_endpoint")
+async def root():
     return {
-        "message": "Welcome to the Physical AI & Humanoid Robotics Textbook API",
-        "version": "1.0.0",
-        "documentation": "/docs",
-        "redoc": "/redoc"
+        "message": (
+            "Physical AI & Humanoid Robotics RAG Chatbot API - "
+            "Use /api/chatbot/chat for REST or /ws for WebSocket"
+        )
     }
-
-
-# Register exception handlers
-app.add_exception_handler(StarletteHTTPException, http_exception_handler)
-app.add_exception_handler(RequestValidationError, validation_exception_handler)
-app.add_exception_handler(Exception, general_exception_handler)
-
-
-# Error handlers
-@app.exception_handler(404)
-async def not_found_handler(request, exc):
-    """
-    Handle 404 errors
-    """
-    from backend.src.utils.error_handler import APIError
-    return APIError.not_found()
-
-
-@app.exception_handler(500)
-async def internal_error_handler(request, exc):
-    """
-    Handle 500 errors
-    """
-    logger.error(f"Internal server error: {exc}")
-    from backend.src.utils.error_handler import APIError
-    return APIError.internal_error()
-
-
-# Include other middleware as needed
-# For example, rate limiting, request validation, etc.

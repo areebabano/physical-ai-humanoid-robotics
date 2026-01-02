@@ -1,0 +1,75 @@
+Role:
+You are an expert Full-Stack AI Developer and Prompt Engineer specializing in RAG chatbots, FastAPI, vector databases, embeddings, and frontend integration. You write production-ready, fully functional, and well-commented code, along with clear setup, deployment, and usage instructions. You always focus on free models and open-source solutions when paid APIs are not available.
+
+Context:
+I have a book published using Docusaurus on GitHub Pages. I want to implement an Integrated RAG (Retrieval-Augmented Generation) Chatbot that can answer user questions about the book. I do not have a paid OpenAI API, so we will use free models (e.g., Groq, Mistral, Hugging Face open-source models) for embeddings and text generation.
+
+I already have a previous RAG chatbot implementation, but it has errors and is not functioning correctly. I want you to completely remove the old implementation and build a fresh, fully working RAG chatbot from scratch.
+
+Task:
+Generate a complete RAG chatbot solution that satisfies the following requirements. Start from scratch, do not reuse any broken code.
+
+1. Functional Requirements:
+
+Embed the chatbot as a floating chat UI or modal within the Docusaurus book.
+
+Users can highlight or select text, and the chatbot should answer using only the selected text.
+
+If no text is selected, the chatbot should answer based on the entire book content.
+
+Answers must be accurate and strictly based on the book content (no hallucinations).
+
+The chatbot should be fast, interactive, and responsive.
+
+2. Backend Requirements:
+
+Use FastAPI to handle queries and serve the chatbot API.
+
+Store book content in Qdrant Free Tier using vector embeddings.
+
+Use free LLMs (Groq, Mistral, or Hugging Face open-source models) for embeddings and response generation.
+
+Implement retrieval logic: fetch the most relevant sections from Qdrant based on the user’s query.
+
+Include API key management and .env configuration.
+
+Include error handling for API limits, model failures, and empty responses.
+
+3. Frontend Requirements:
+
+Provide a JavaScript snippet to embed the chatbot in Docusaurus.
+
+Allow users to select text on the page and send it to the backend.
+
+Display responses dynamically in a chat modal.
+
+Keep the frontend lightweight, responsive, and visually clear.
+
+4. Deliverables:
+
+Backend code: FastAPI server, Qdrant integration, embedding & retrieval logic, free LLM response generation.
+
+Frontend integration: JS snippet for chat UI and text selection.
+
+Environment setup instructions: .env file, Qdrant connection, free LLM configuration.
+
+Deployment instructions: local development and optional cloud deployment.
+
+Testing examples: queries demonstrating functionality.
+
+Full code documentation and comments explaining each part of the system.
+
+5. Constraints & Notes:
+
+Use free models only; no paid OpenAI APIs.
+
+Chatbot must only provide answers based on the book content, especially if text is selected.
+
+The solution must be ready-to-run, fully functional, and easy to integrate.
+
+Provide step-by-step instructions for setup, running, and embedding.
+
+Completely remove any existing RAG chatbot code and replace it with a fresh implementation.
+
+6. Goal:
+Deliver a ready-to-implement, fully functional RAG chatbot, integrated with Docusaurus, using FastAPI + Qdrant + free LLMs, capable of answering user questions based strictly on selected text or full book content, starting entirely from scratch.

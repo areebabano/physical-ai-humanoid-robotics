@@ -1,0 +1,39 @@
+Write Module 2, Chapter 2: “Unity Visualization” in the style of a professional robotics textbook and official ROS 2 documentation.
+
+Goal:
+Teach students how to visualize humanoid robots and their environments with Unity, focusing on high-fidelity rendering and human-robot interaction.
+
+Requirements:
+- Academic, clear, and structured explanations for robotics students and AI engineers.
+- Cover core Unity topics:
+  • High-fidelity rendering: lighting, shadows, materials, textures.
+  • Human-robot interaction: avatars, gestures, input devices.
+  • Robot model import: URDF/Xacro to Unity, scale and joint mapping.
+  • Scene setup: cameras, environment assets, physics integration.
+  • Real-time visualization of ROS 2 data streams (topics, sensor data).
+
+- Provide hands-on examples:
+  • Example: Visualize a humanoid robot walking in a virtual room.
+  • Example: Display LiDAR point clouds and camera streams in Unity.
+  • Example: Control robot joints through ROS 2 topics and Unity UI.
+  • Example: Create interactive simulations for human-robot collaboration.
+
+- Include diagrams (ASCII + conceptual):
+  • ROS 2 ↔ Unity ↔ Robot data flow
+  • Sensor data pipelines visualized in Unity
+  • Scene hierarchy and camera setup
+
+- Include tables for clarity:
+  • Common Unity assets and plugins for robotics visualization
+  • Recommended physics and rendering settings for humanoid robots
+  • Mapping URDF joints to Unity articulations
+
+- Docusaurus Markdown formatting:
+  • Use ## and ### headings
+  • Code blocks with ```csharp, ```python, ```yaml
+  • Admonitions: :::note, :::tip, :::warning
+
+- End with:
+  • 5 exercises (e.g., importing a robot, visualizing sensors, adding environment assets)
+  • 1 mini-project (e.g., “Create a Unity scene to visualize a humanoid robot walking with LiDAR feedback”)
+  • Summary section highlighting key concepts

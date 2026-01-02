@@ -1,0 +1,64 @@
+# Step 1: Integrate RAG Chatbot into Existing Docusaurus Book
+
+## Purpose
+Integrate a fully functional Retrieval-Augmented Generation (RAG) chatbot into the existing Physical AI & Humanoid Robotics Docusaurus book. The chatbot must answer questions about the book content, including sections highlighted or selected by the user.
+
+## Instructions for Claude
+
+1. **Frontend (Docusaurus)**
+   - Add a floating chatbot widget accessible on every page.
+   - Ensure mobile-responsive and visually consistent with book theme.
+   - Widget should allow:
+     - Text input
+     - Optional highlighting of text to use as context
+     - Display chatbot responses dynamically
+   - Connect the widget to backend API endpoints.
+
+2. **Backend (FastAPI)**
+   - Setup API endpoints:
+     - `POST /chat` → accept user question and optional selected text, return chatbot answer.
+     - `POST /ingest` → ingest book content into vector database (Qdrant).
+   - Include CORS and `.env` loading.
+   - Use async endpoints for handling multiple requests.
+   - Integrate OpenAI Agents/ChatKit SDK for RAG.
+   - Connect to Neon Serverless Postgres for logging user questions and chat history.
+
+3. **Vector Database (Qdrant)**
+   - Store embeddings of all book chapters for semantic search.
+   - Create ingestion pipeline to:
+     - Split book text into sections
+     - Generate embeddings
+     - Store embeddings in Qdrant
+   - Enable retrieval based on user query or highlighted text.
+
+4. **RAG Pipeline**
+   - On user query:
+     - Retrieve relevant text from Qdrant (consider highlighted selection first)
+     - Pass retrieved text + query to OpenAI Agent/ChatKit
+     - Return formatted response to frontend
+   - Log interactions in Postgres for analytics.
+
+5. **Deployment & Testing**
+   - Ensure frontend and backend can run locally.
+   - Include instructions to deploy backend (FastAPI + Qdrant + Postgres) and frontend (Docusaurus) on any server.
+   - Provide minimal working example of a chat session.
+
+6. **Validation**
+   - Chatbot responds accurately to book content questions.
+   - Can handle optional highlighted text input.
+   - Logs chats in database.
+   - Frontend widget works on all book pages.
+   - Backend endpoints tested and functional.
+
+## Output
+Claude should generate:
+
+- Frontend widget code (`React` + Docusaurus integration)
+- Backend FastAPI endpoints (`chat` and `ingest`)
+- Qdrant ingestion scripts
+- RAG pipeline integration using OpenAI Agents/ChatKit
+- Example `.env` file for API keys
+- README instructions to run the full system
+
+---
+

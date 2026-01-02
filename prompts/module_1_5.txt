@@ -1,0 +1,48 @@
+Write Module 1, Chapter 5: “Advanced rclpy” in the style of a professional robotics textbook and official ROS 2 documentation.
+
+Requirements:
+- Academic, clear explanations for robotics students and AI engineers.
+- Cover all advanced rclpy concepts:
+  • Node architecture in rclpy
+  • Timers and periodic execution patterns
+  • Callback types (subscription callbacks, service callbacks, timer callbacks)
+  • Multi-threaded vs single-threaded executors
+  • Callback groups (mutually exclusive, reentrant)
+  • Parameters (declare, get, set, dynamic parameters)
+  • YAML-based parameter loading
+  • Error handling, exceptions, and debugging tools
+  • Logging, QoS tuning, lifecycle considerations
+
+- Provide real rclpy examples:
+  • Node with multiple timers
+  • Subscriptions and publishers with different QoS
+  • Service + action callbacks
+  • Using callback groups with a MultiThreadedExecutor
+  • Dynamic parameter updates
+  • Loading parameters via launch files
+
+- Include diagrams (ASCII + conceptual):
+  • Callback execution flow
+  • Executor scheduling diagram
+  • Parameter update lifecycle
+  • Multi-threaded executor architecture
+
+- Include tables comparing:
+  • Callback groups
+  • QoS profiles
+  • Timer vs async patterns
+
+- Docusaurus Markdown formatting:
+  • ## and ### headings
+  • Code blocks with ```python, ```bash, ```yaml
+  • Admonitions using :::note, :::tip, :::warning
+
+- Add robotics-focused context:
+  • Using timers for sensor polling
+  • Using callback groups for humanoid motor controllers
+  • Parameter tuning for balance, gait, and sensor calibration
+
+- End with:
+  • 5 exercises
+  • 1 mini-project (e.g., “build a multi-threaded sensor node with dynamic parameters”)
+  • Summary section

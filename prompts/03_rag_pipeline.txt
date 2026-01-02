@@ -1,0 +1,90 @@
+Step 3: RAG Chatbot Query & Retrieval Pipeline
+Purpose
+
+Implement the query and retrieval pipeline for the RAG chatbot so it can answer user questions based on book content stored in Qdrant and optionally augmented with selected text from the user.
+
+Instructions for Claude
+
+Query Endpoint
+
+Create /api/chatbot/chat endpoint if not already done.
+
+Accepts POST requests with JSON payload:
+
+{
+  "question": "User question here",
+  "selected_text": "Optional selected text to add context"
+}
+
+
+Retrieve Relevant Chunks
+
+Query Qdrant with the user question embedding.
+
+Retrieve top N most similar chunks (default N=5).
+
+Merge the selected_text (if provided) with retrieved chunks as additional context.
+
+Context-Aware Response Generation
+
+Use OpenAI Agents / ChatKit SDK to generate answers based on retrieved chunks.
+
+Ensure responses are:
+
+Contextually accurate
+
+Concise and clear
+
+Relevant to the user query
+
+Include citations of chapters/sections for reference.
+
+Logging & Analytics
+
+Log each chat interaction to Neon Postgres:
+
+User question
+
+Selected text
+
+Retrieved chunks
+
+Generated answer
+
+Timestamp
+
+Include unique interaction IDs for tracking.
+
+Optional Features
+
+Add response validation to ensure no hallucinations.
+
+Implement rate-limiting to prevent API abuse.
+
+Support streaming responses if possible.
+
+Add caching for repeated questions to improve performance.
+
+Validation
+
+Test with multiple queries across different chapters.
+
+Ensure chatbot returns correct and contextually relevant answers.
+
+Verify that logging captures all necessary details.
+
+Check Qdrant similarity search results for correctness.
+
+Output
+
+Claude should generate:
+
+Backend FastAPI query logic for /api/chatbot/chat
+
+Integration with Qdrant and OpenAI Agents/ChatKit SDK
+
+Context merging with optional selected text
+
+Logging to Neon Postgres
+
+Example usage commands and test queries

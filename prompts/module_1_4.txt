@@ -1,0 +1,45 @@
+Write Module 1, Chapter 4: “URDF Robot Modeling” in the style of a professional robotics textbook and official ROS documentation.
+
+Requirements:
+- Academic, clear explanations for robotics and AI-native humanoid development.
+- Cover all foundational topics:
+  • What is URDF?
+  • Link elements (visual, collision, inertial)
+  • Joint types (revolute, continuous, prismatic, fixed, planar, floating)
+  • Xacro introduction for modular robot modeling
+  • Robot kinematic structure (parent-child relationships)
+  • Frames, transformations, and coordinate system conventions
+  • Materials and mesh files
+  • Best practices for humanoid robot URDFs
+
+- Include diagrams (ASCII + structural):
+  • Humanoid link–joint tree
+  • Simple robot chain (base → torso → arm)
+  • Frame orientation diagrams
+  • Visual vs collision vs inertial comparison
+
+- Add real examples:
+  • Minimal URDF robot with links + joints
+  • Example of visual/collision/inertia fields
+  • Xacro macros (e.g., repeating legs or arms)
+  • Loading URDF in RViz and Gazebo
+
+- Add comparison tables:
+  • Joint types and usage
+  • Visual vs collision vs inertial elements
+  • URDF vs Xacro
+
+- Docusaurus Markdown formatting:
+  • Use ## and ### headings
+  • Code blocks with ```xml, ```bash
+  • Admonitions using :::note, :::tip, :::warning
+
+- Add robotics-focused guidance:
+  • Modeling humanoid robots (spine, legs, arms)
+  • Center of mass and inertial tuning
+  • Mesh optimization for performance
+
+- End with:
+  • 5 exercises
+  • 1 mini-project (build a simple humanoid URDF with torso, arm, and leg)
+  • Summary section

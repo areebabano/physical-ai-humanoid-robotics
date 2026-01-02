@@ -1,0 +1,38 @@
+Write Module 3, Chapter 2: “AI Perception & Reinforcement Learning” in the style of a professional robotics textbook and official ROS 2 documentation.
+
+Goal:
+Teach robotics students and AI engineers about perception pipelines in humanoid robots and the integration of reinforcement learning (RL), including sim-to-real transfer.
+
+Requirements:
+- Academic, structured, and clear explanations suitable for students and developers.
+- Cover core topics:
+  • AI Perception: vision, LiDAR, depth sensing, sensor fusion.
+  • Data preprocessing and ROS 2 topic integration.
+  • Reinforcement Learning fundamentals: agents, environments, rewards, policies.
+  • Training RL agents in simulation and transferring to real robots (sim-to-real).
+  • Integration of perception modules with RL control pipelines.
+
+- Provide hands-on examples:
+  • Python example: subscribing to perception topics and preprocessing data.
+  • RL example: training a robot in simulation using Isaac Sim or Gazebo.
+  • Sim-to-real workflow: exporting trained RL policies to physical robots.
+
+- Include diagrams (ASCII + conceptual):
+  • Perception → RL agent → Robot action loop
+  • Sensor fusion pipeline for humanoid robots
+  • Sim-to-real transfer workflow
+
+- Include tables for clarity:
+  • Common perception sensors and ROS 2 topics
+  • RL environment parameters and hyperparameters
+  • Sim-to-real best practices
+
+- Docusaurus Markdown formatting:
+  • Use ## and ### headings
+  • Code blocks with ```python, ```yaml, ```bash
+  • Admonitions: :::note, :::tip, :::warning
+
+- End with:
+  • 5 exercises (e.g., building perception pipelines, training RL agents)
+  • 1 mini-project (e.g., “Implement a humanoid robot using perception-guided RL in simulation and transfer to real robot”)
+  • Summary section highlighting key concepts

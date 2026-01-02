@@ -1,0 +1,86 @@
+Step 5: End-to-End Testing & Deployment of RAG Chatbot
+Purpose
+
+Validate the full RAG chatbot pipeline and deploy the Docusaurus book with the integrated chatbot.
+
+Instructions for Claude
+
+End-to-End Testing
+
+Run full integration tests for:
+
+Content ingestion
+
+Embedding generation
+
+Vector storage in Qdrant
+
+Query and retrieval
+
+Chatbot API endpoint
+
+React widget
+
+Verify:
+
+Correct answers with citations
+
+Selected text context integration
+
+Rate-limiting and caching behavior
+
+Error handling and fallback responses
+
+Generate a test report showing success/failure for each module
+
+Automated Scripts
+
+Create scripts/run_tests.sh or run_tests.bat to run all backend tests
+
+Ensure scripts can be executed in CI/CD environments
+
+Deployment
+
+Prepare Docusaurus build: npm run build
+
+Ensure environment variables are set for backend API endpoints
+
+Deploy backend (FastAPI) to a serverless or containerized environment (e.g., Vercel, Render, or local hosting)
+
+Deploy Docusaurus static site with chatbot to GitHub Pages or another hosting provider
+
+Verify chatbot functions after deployment
+
+Documentation
+
+Update README.md with:
+
+Full setup instructions
+
+Deployment steps for backend and frontend
+
+How to run tests locally and in CI/CD
+
+Troubleshooting common issues
+
+Validation
+
+Verify frontend and backend connectivity
+
+Ensure chatbot answers questions correctly using both ingested content and selected text
+
+Confirm proper logging to Postgres
+
+Confirm performance benchmarks (latency <1 sec for queries)
+
+Output
+
+Claude should generate:
+
+Full integration test scripts
+
+Deployment scripts and instructions
+
+Updated README with end-to-end usage instructions
+
+Verification checklist for post-deployment

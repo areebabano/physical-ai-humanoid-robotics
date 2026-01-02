@@ -1,0 +1,47 @@
+Write Module 1, Chapter 6: “Integration & Applications” in the style of a professional robotics textbook and official ROS 2 documentation.
+
+Goal:
+Teach students how to combine all core ROS 2 concepts—nodes, topics, services, actions, URDF, packages, and rclpy—into complete humanoid robotics applications.
+
+Requirements:
+- Academic, clear explanations for robotics students and AI engineers.
+- Cover full-stack integration topics:
+  • Combining nodes, topics, services, and actions into a working system.
+  • Integrating URDF/Xacro models with controllers, sensors, and simulation.
+  • Launching multi-node systems using ROS 2 launch files.
+  • Parameter management across the system.
+  • Event-driven architecture and real-time callbacks.
+  • Building modular humanoid control pipelines.
+  • Data flow and control flow in a robotics application.
+
+- Provide end-to-end examples:
+  • Example: A simple humanoid head controller using topics + services.
+  • Example: Sensor processing node feeding a decision node.
+  • Example: Launch file that starts URDF + controller nodes + parameter files.
+  • Example: Multi-node rclpy system with callback groups.
+
+- Include diagrams (ASCII + conceptual):
+  • System architecture overview (nodes + topics + services + actions)
+  • URDF → controllers → nodes → simulation pipeline
+  • Event flow and data flow diagrams
+  • Multi-node launch orchestration design
+
+- Include tables for clarity:
+  • Communication methods comparison (topics, services, actions)
+  • High-level modules in a typical humanoid robot stack
+  • Integration checklist
+
+- Docusaurus Markdown formatting:
+  • Use ## and ### headings
+  • Code blocks with ```python, ```bash, ```xml, ```yaml
+  • Admonitions: :::note, :::tip, :::warning
+
+- Add humanoid robotics-specific context:
+  • Example motor control architecture (legs, arms, head)
+  • Sensors → processing → decisions → actuation loop
+  • Safety considerations (fallback behaviors, watchdog timers)
+
+- End with:
+  • 5 hands-on exercises
+  • 1 capstone mini-project (e.g., “Build a multi-node humanoid control system with URDF, topics, services, and parameters”)
+  • Summary section

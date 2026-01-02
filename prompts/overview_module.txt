@@ -1,0 +1,29 @@
+Generate a professional "Overview" chapter for the book 
+PHYSICAL AI & HUMANOID ROBOTICS.
+
+Requirements:
+
+1. Chapter details:
+   - Filename: docs/module_0_overview.md
+   - Title: Overview – Physical AI & Humanoid Robotics
+   - Module.Chapter numbering: 0.0–0.5
+
+2. Sections to include:
+   • 0.0 Why Physical AI & Humanoid Robotics?
+   • 0.1 Book Scope & Roadmap (Modules 1–4)
+   • 0.2 Key Concepts & Terminology
+   • 0.3 Hardware & Software Requirements
+   • 0.4 Learning Objectives & Success Criteria
+   • 0.5 How to Use This Book
+
+3. Style & format:
+   - Professional textbook style
+   - Concise, student-friendly, clear explanations
+   - Include at least 1 figure placeholder:
+     <!-- FIGURE: id=fig_overview caption="Physical AI & Humanoid Robotics Overview" width=800 -->
+   - MDX-ready formatting
+   - Use headings (#, ##), bullet points, code blocks if necessary
+
+4. Output:
+   - Complete MDX content ready to save as docs/module_0_overview.md
+   - Do not modify any existing module_1–4 files

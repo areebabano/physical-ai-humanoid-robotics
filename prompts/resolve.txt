@@ -1,0 +1,38 @@
+You are a senior full-stack AI engineer. I have a local project “PHYSICAL AI & HUMANOID ROBOTICS” with:
+
+- Frontend: Docusaurus React app
+- Backend: FastAPI (Python)
+- Database: SQLite
+- Vector store: Qdrant (Docker or Cloud)
+- Chatbot: RAG system using Gemini/other free-tier APIs
+
+Currently, my frontend and backend are running on the same port (8000), which causes:
+
+- 404 errors for frontend JS files
+- WebSocket 403 Forbidden
+- CORS issues
+- Chatbot “Failed to fetch” errors
+
+I need you to **fix the full setup automatically** so that:
+
+1. Backend runs on **port 8000**.
+2. Frontend runs on **port 3000** (or any other free port) and correctly points to the backend API.
+3. FastAPI backend has **proper CORS configuration** to allow the frontend origin.
+4. WebSocket connections for the chatbot are correctly accepted.
+5. ChatbotWidget.jsx / .tsx fetch calls point to the correct backend URL.
+6. All local paths, scripts, and environment variables are correctly configured.
+7. Optional: generate a **single batch script** that starts:
+   - Backend (8000)
+   - Frontend (3000)
+   - Qdrant Docker (if used locally)
+   in separate terminals.
+
+Deliverables:
+
+- Updated `src/main.py` for FastAPI with CORS and WebSocket fix
+- Updated `ChatbotWidget.jsx` / `.tsx` fetch calls
+- Instructions to run frontend on 3000
+- Optional batch script to run everything at once
+- Explanation of changes made
+
+Do not break any existing functionality of the RAG chatbot. Make it fully functional locally with free-tier services.

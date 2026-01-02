@@ -1,66 +1,144 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
+import React from 'react';
 import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import {
+  FaBook,
+  FaRobot,
+  FaLock,
+  FaFlask,
+  FaCog,
+  FaDesktop,
+  FaEye,
+  FaChartLine,
+  FaGlobe
+} from 'react-icons/fa';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: ReactNode;
+  Icon: React.ComponentType;
+  description: React.ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Comprehensive Textbook',
+    Icon: FaBook,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        A complete guide covering all aspects of physical AI and humanoid robotics.
+        From fundamentals to advanced concepts, with practical examples and hands-on exercises.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'AI-Powered Chatbot',
+    Icon: FaRobot,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Get instant help with our intelligent RAG-powered chatbot that understands
+        the textbook content and provides contextual answers to your questions.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Secure Authentication',
+    Icon: FaLock,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Personalized learning experience with secure user accounts, progress tracking,
+        and customized content recommendations based on your learning journey.
+      </>
+    ),
+  },
+  {
+    title: 'Hands-On Labs',
+    Icon: FaFlask,
+    description: (
+      <>
+        Practice what you learn with interactive labs, simulation exercises,
+        and real-world robotics projects using ROS 2, Gazebo, and Isaac Sim.
+      </>
+    ),
+  },
+  {
+    title: 'ROS 2 Mastery',
+    Icon: FaCog,
+    description: (
+      <>
+        Master Robot Operating System 2 (ROS 2) with in-depth tutorials,
+        best practices, and production-ready code examples for building robotic applications.
+      </>
+    ),
+  },
+  {
+    title: 'Simulation Environments',
+    Icon: FaDesktop,
+    description: (
+      <>
+        Learn to work with industry-standard simulation tools including Gazebo Classic,
+        Gazebo Fortress, and NVIDIA Isaac Sim for virtual robot development and testing.
+      </>
+    ),
+  },
+  {
+    title: 'Vision-Language-Action Models',
+    Icon: FaEye,
+    description: (
+      <>
+        Explore cutting-edge VLA models that enable robots to understand visual scenes,
+        process natural language commands, and execute complex manipulation tasks.
+      </>
+    ),
+  },
+  {
+    title: 'Progressive Learning Path',
+    Icon: FaChartLine,
+    description: (
+      <>
+        Structured curriculum from beginner to advanced topics, with clear learning objectives,
+        assessments, and capstone projects to solidify your robotics expertise.
+      </>
+    ),
+  },
+  {
+    title: 'Real-World Applications',
+    Icon: FaGlobe,
+    description: (
+      <>
+        Learn by building real applications: autonomous navigation, manipulation tasks,
+        human-robot interaction, and complete humanoid control systems.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, Icon, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+    <div className="feature-card">
+      <div className="feature-icon">
+        <Icon />
       </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
+      <Heading as="h3" className="feature-title">
+        {title}
+      </Heading>
+      <p className="feature-description">{description}</p>
     </div>
   );
 }
 
-export default function HomepageFeatures(): ReactNode {
+export default function HomepageFeatures(): React.ReactElement {
   return (
-    <section className={styles.features}>
+    <section className="features-section">
       <div className="container">
-        <div className="row">
+        <div className="features-header">
+          <h2 className="features-main-title">
+            Why Choose This Course?
+          </h2>
+          <p className="features-subtitle">
+            A comprehensive, hands-on approach to mastering physical AI and humanoid robotics
+          </p>
+          <div className="features-divider"></div>
+        </div>
+        <div className="features-grid">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}

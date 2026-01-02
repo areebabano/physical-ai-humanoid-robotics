@@ -1,0 +1,40 @@
+Write Module 2, Chapter 1: “Gazebo Simulation” in the style of a professional robotics textbook and official ROS 2 documentation.
+
+Goal:
+Teach students how to use Gazebo for realistic humanoid robot simulation, including physics, sensors, and environment interaction.
+
+Requirements:
+- Academic, clear, and structured explanations for robotics students and AI engineers.
+- Cover core Gazebo topics:
+  • Physics engine: dynamics, gravity, collisions, friction.
+  • Sensor simulation: LiDAR, Depth Camera, IMU, and other typical humanoid sensors.
+  • Model integration: importing URDF/Xacro into Gazebo.
+  • Environment setup: world files, obstacles, lighting, and floor physics.
+  • Real-time simulation and step-wise control.
+  • Plugin usage for sensors and controllers.
+
+- Provide hands-on examples:
+  • Example: Simulate a humanoid robot walking in a room with collision detection.
+  • Example: Integrate a LiDAR sensor and visualize point clouds.
+  • Example: Add IMU and Depth Camera data streams for perception nodes.
+  • Example: Launch file that integrates ROS 2 nodes with Gazebo simulation.
+
+- Include diagrams (ASCII + conceptual):
+  • Robot ↔ Gazebo simulation ↔ ROS 2 nodes data flow
+  • Sensor placement and data pipelines
+  • Physics and collision detection workflow
+
+- Include tables for clarity:
+  • Common Gazebo plugins for sensors and controllers
+  • Physics parameters and their effects on humanoid simulation
+  • Sensor specifications and usage guidelines
+
+- Docusaurus Markdown formatting:
+  • Use ## and ### headings
+  • Code blocks with ```python, ```xml, ```yaml, ```bash
+  • Admonitions: :::note, :::tip, :::warning
+
+- End with:
+  • 5 exercises (e.g., adding a new sensor, tuning physics parameters)
+  • 1 mini-project (e.g., “Simulate a humanoid robot with LiDAR and IMU in a custom Gazebo world”)
+  • Summary section highlighting key concepts

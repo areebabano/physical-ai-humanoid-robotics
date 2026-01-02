@@ -1,0 +1,45 @@
+Write Module 1, Chapter 3: “ROS 2 Services and Actions” in the style of a professional robotics textbook and official ROS documentation.
+
+Requirements:
+- Academic, clear explanations for robotics students and AI engineers.
+- Cover foundational concepts:
+  • What are ROS 2 Services?
+  • Request–response communication pattern
+  • Synchronous vs asynchronous service calls
+  • Service servers and clients (Python + C++)
+  • ros2 interface show and custom service definitions (.srv)
+  • Error handling, timeouts, and QoS considerations
+
+- Cover ROS 2 Actions in depth:
+  • Why actions are needed (long-running tasks)
+  • Action server, action client
+  • Goal, feedback, and result structure
+  • Custom action definitions (.action)
+  • Cancel goals, progress updates, multi-goal handling
+  • Real humanoid robotics examples (navigation, manipulation)
+
+- Include diagrams:
+  • Service call request/response flow
+  • Action goal → feedback → result pipeline
+  • Architecture diagrams of typical robot systems using services/actions
+
+- Provide real code examples:
+  • Python (rclpy) service server and client
+  • Python action server and client
+  • Launch file usage with actions/services
+
+- Add best practices for humanoid robotics projects:
+  • Structuring service/action packages
+  • Naming conventions
+  • Reliability patterns
+
+- Include Docusaurus Markdown formatting:
+  • ## / ### headings
+  • Admonitions: :::note, :::tip, :::warning
+  • Code blocks with ```python, ```bash, ```xml
+  • Tables for comparison (Services vs Actions)
+
+- End with:
+  • 5 exercises
+  • 1 mini project (implement an action-based humanoid arm controller)
+  • Summary section

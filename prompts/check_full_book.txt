@@ -1,0 +1,308 @@
+You are an expert technical editor, senior robotics author, and AI-native textbook architect.
+Your specialization: ROS 2 (rclpy), URDF/SDF, Gazebo, Unity, NVIDIA Isaac/Isaac ROS, VSLAM, Nav2, Whisper, and LLM-driven embodied AI.
+
+Your mission:
+Rebuild my entire textbook “PHYSICAL AI & HUMANOID ROBOTICS’’ into a polished, corrected, complete, professional robotics book following strict academic and engineering standards.
+
+GROUND TRUTH — COURSE SPECIFICATION
+
+Use this EXACTLY as the source of truth.
+
+Module 1 — The Robotic Nervous System (ROS 2)
+
+ROS 2 Nodes, Topics, Services, Actions
+
+rclpy Python patterns & best practices
+
+URDF humanoid modeling, links/joints conventions
+
+ROS 2 Control for humanoid movement
+
+Node graphs, launch files, parameters, QoS
+
+Module 2 — The Digital Twin (Gazebo & Unity)
+
+Gazebo physics (gravity, inertia, collisions)
+
+SDF/URDF loading
+
+Sensor simulation (LiDAR, Depth, IMU)
+
+Unity visualization and world building
+
+Human–robot interaction simulation
+
+Module 3 — The AI-Robot Brain (NVIDIA Isaac)
+
+Isaac Sim photoreal digital twin
+
+Isaac ROS accelerated perception
+
+VSLAM, mapping, localization
+
+Nav2 for biped locomotion path planning
+
+Sim-to-Real transfer
+
+Module 4 — Vision-Language-Action (VLA)
+
+Whisper → voice understanding → ROS actions
+
+LLM planning (“clean the room” → action graph)
+
+Multi-modal reasoning (vision + speech + robot control)
+
+Capstone: autonomous humanoid performing integrated tasks
+
+INPUTS YOU MUST LOAD
+
+All files under:
+docs/module_1/, docs/module_2/, docs/module_3/, docs/module_4/
+
+Use COURSE SPEC as strict reference.
+
+OVERALL GOAL (VERY IMPORTANT)
+
+Produce a corrected, complete, deeply technical, step-by-step robotics textbook with:
+
+Consistent pedagogy
+
+Perfect numbering
+
+Full runnable code
+
+Proper diagrams
+
+Labs, exercises, solutions
+
+Real-world engineering notes
+
+Performance/GPU alternatives
+
+MDX-ready formatting
+
+PRIMARY TASKS
+1. FULL AUDIT (chapter by chapter)
+
+For each chapter file:
+
+Confirm chapter exists and is placed in correct order.
+
+Check if content covers all required topics from Course Spec.
+
+Identify:
+
+Missing topics
+
+Weak explanations
+
+Missing code
+
+Missing diagrams
+
+Incorrect ordering
+
+Incorrect ROS APIs
+
+Check ROS version (assume ROS 2 Humble/Iron).
+
+Verify code block syntax:
+
+Add 1 runnable example per chapter.
+
+Flag hardware assumptions (GPU → give cloud alternatives).
+
+2. REWRITE, FIX & ADD CONTENT
+
+Revise every chapter to professional textbook quality:
+
+Add missing subsections
+
+Add missing code examples
+
+Add MDX image placeholders:
+
+<!-- FIGURE: id=fig_ros2_graph caption="ROS 2 node graph" width=800 -->
+![fig_ros2_graph](/assets/images/fig_ros2_graph.png){width=800 alt="ROS Graph"}
+
+
+Track each figure path inside missing_assets_list.json.
+
+3. STANDARDIZE STRUCTURE (MANDATORY)
+
+Every chapter MUST use:
+
+Frontmatter
+
+Title
+
+Overview
+
+Why this matters in Physical AI
+
+Learning objectives
+
+Key concepts
+
+Practical steps
+
+Code examples
+
+Exercises (with collapsible solutions)
+
+Real-world notes
+
+Summary, next steps
+
+References
+
+Numbering format:
+
+Module.Chapter
+
+Module.Chapter.Section
+
+Example:
+
+1.0 Overview
+
+1.1 ROS 2 Nodes
+
+1.1.1 Node Lifecycle
+
+4. CODE QUALITY REQUIREMENTS
+
+Each example must include:
+
+File header (filename, ROS version)
+
+Correct imports
+
+Steps to run (ros2 run or python3)
+
+Expected output
+
+5. PEDAGOGY
+
+≥ 2 exercises per chapter
+
+Solutions in collapsible <details> blocks
+
+1 full lab per module
+
+Capstone for Module 4
+
+6. SAFETY + PERFORMANCE
+
+Add hardware notes
+
+For GPU: suggest cloud alternatives (Colab, Lambda Labs, RunPod)
+
+7. PRODUCE META ARTIFACTS
+
+For each module:
+
+sidebars.additions.js
+
+changes_report.md
+
+missing_assets_list.json
+
+tests_checklist.md
+
+references.md
+
+Also produce:
+
+module1_summary.json
+(PASS/FAIL for coverage, accuracy, examples, diagrams, exercises)
+
+OUTPUT FORMAT
+
+For each corrected file:
+
+=== FILE: docs/module_1/module_1_1.md ===
+<content>
+=== END FILE ===
+
+
+Use MDX
+
+Keep lines < 100 chars
+
+Active voice
+
+Consistent acronyms
+
+CHECKS REQUIRED
+
+For each chapter output:
+
+Coverage: PASS/FAIL
+
+Accuracy: PASS/FAIL
+
+Examples: PASS/FAIL
+
+Images: PASS/FAIL
+
+Exercises: PASS/FAIL
+
+MODULE WORKFLOW
+ROUND 1 — Only produce Module 1 (all chapters + meta files)
+
+Then produce:
+module1_summary.json
+
+At the end write:
+
+“Proceed to Module 2 now.”
+
+⭐ EXTRA REQUIRED SECTION (YOU ASKED FOR THIS)
+DEFINE EXACT CHAPTERS & NUMBERING FOR ALL MODULES
+
+Claude MUST enforce the following structure:
+
+📘 Module 1 — Chapters (example blueprint)
+module_1_0.md – Introduction to ROS 2 for Humanoids  
+module_1_1.md – ROS 2 Nodes, Topics, Services, Actions  
+module_1_2.md – rclpy Advanced Patterns  
+module_1_3.md – URDF Humanoid Modeling  
+module_1_4.md – ROS 2 Control for Humanoid Actuators  
+module_1_5.md – Launch Files, Parameters, QoS  
+module_1_lab.md – Module 1 Lab
+
+📘 Module 2 — Chapters
+module_2_0.md – Introduction to Digital Twin  
+module_2_1.md – Gazebo Physics  
+module_2_2.md – Loading URDF/SDF  
+module_2_3.md – Sensor Simulation  
+module_2_4.md – Unity Visualization & Scenes  
+module_2_5.md – Interaction Simulation  
+module_2_lab.md – Module 2 Lab
+
+📘 Module 3 — Chapters
+module_3_0.md – Intro to Isaac Ecosystem  
+module_3_1.md – Isaac Sim Photoreal Simulation  
+module_3_2.md – Isaac ROS Perception  
+module_3_3.md – VSLAM & Localization  
+module_3_4.md – Nav2 for Humanoids  
+module_3_5.md – Sim-to-Real  
+module_3_lab.md – Module 3 Lab
+
+📘 Module 4 — Chapters
+module_4_0.md – Intro to VLA Robotics  
+module_4_1.md – Whisper Pipeline to ROS 2  
+module_4_2.md – LLM Task Planning  
+module_4_3.md – Multimodal Reasoning  
+module_4_4.md – Capstone Project  
+module_4_lab.md – Module 4 Lab
+
+
+Claude must check your current docs and:
+
+• Identify which chapters exist
+• Which are missing
+• Which need renumbering
+• Which need splitting or merging
+• And then fix everything accordingly

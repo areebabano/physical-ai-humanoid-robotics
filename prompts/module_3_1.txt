@@ -1,0 +1,38 @@
+Write Module 3, Chapter 1: “Isaac Sim Basics” in the style of a professional robotics textbook and official ROS 2 documentation.
+
+Goal:
+Introduce students to NVIDIA Isaac Sim for simulating humanoid robots, focusing on simulation fundamentals, VSLAM, and navigation with Nav2.
+
+Requirements:
+- Academic, clear, and structured explanations for robotics students and AI engineers.
+- Cover core topics:
+  • Isaac Sim setup and environment configuration.
+  • Physics simulation: collision, friction, gravity, and rigid-body dynamics.
+  • VSLAM (Visual Simultaneous Localization and Mapping): overview, cameras, LiDAR integration.
+  • Nav2 navigation stack basics in simulation: path planning, obstacle avoidance, and robot localization.
+  • Python API integration with ROS 2 for controlling and monitoring robots.
+
+- Provide hands-on examples:
+  • Example: Launch a humanoid robot in Isaac Sim and visualize sensors.
+  • Example: Simulate a robot mapping a room using VSLAM.
+  • Example: Integrate Nav2 to navigate the robot autonomously in a virtual environment.
+
+- Include diagrams (ASCII + conceptual):
+  • Isaac Sim ↔ ROS 2 ↔ Robot data flow
+  • Sensor data processing pipeline in simulation
+  • Nav2 navigation workflow
+
+- Include tables for clarity:
+  • Common Isaac Sim nodes and Python API methods
+  • Recommended simulation physics settings for humanoid robots
+  • Mapping sensors to ROS 2 topics
+
+- Docusaurus Markdown formatting:
+  • Use ## and ### headings
+  • Code blocks with ```python, ```yaml, ```bash
+  • Admonitions: :::note, :::tip, :::warning
+
+- End with:
+  • 5 exercises (e.g., launching Isaac Sim, configuring sensors, running Nav2)
+  • 1 mini-project (e.g., “Simulate a humanoid robot performing VSLAM in a virtual environment with autonomous navigation”)
+  • Summary section highlighting key concepts

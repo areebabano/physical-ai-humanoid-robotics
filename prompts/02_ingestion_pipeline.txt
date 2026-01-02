@@ -1,0 +1,80 @@
+Step 2: Content Ingestion & Embeddings Pipeline for RAG Chatbot
+Purpose
+
+Automatically ingest all book chapters, split content into chunks, generate embeddings using OpenAI, and store them in Qdrant vector database for efficient retrieval by the RAG chatbot.
+
+Instructions for Claude
+
+Content Ingestion
+
+Read all markdown files from docs/ folder.
+
+Preserve chapter titles, headings, and subheadings.
+
+Extract text content and metadata (e.g., chapter, section).
+
+Text Chunking
+
+Split text into meaningful chunks (200–500 words each).
+
+Each chunk should preserve context (avoid splitting mid-sentence or mid-paragraph).
+
+Assign unique IDs to each chunk for indexing in Qdrant.
+
+Embedding Generation
+
+Use OpenAI embedding API to generate vector representations for each text chunk.
+
+Store embeddings in a format compatible with Qdrant (float32 vectors).
+
+Include metadata with each vector: chapter, section, chunk ID, and raw text snippet.
+
+Qdrant Vector Database Setup
+
+Ensure Qdrant connection is initialized (qdrant-client).
+
+Create a collection for book embeddings (e.g., physical_ai_book_vectors).
+
+Insert all chunk embeddings with metadata into Qdrant.
+
+Implement basic error handling (e.g., retry failed inserts).
+
+Backend Endpoint for Ingestion
+
+Create /api/chatbot/ingest endpoint if not already done.
+
+Trigger ingestion from API call with optional parameters:
+
+chapter → ingest a specific chapter
+
+all → ingest the entire book
+
+Return JSON summary: total chunks processed, inserted vectors, skipped chunks, errors.
+
+Validation
+
+After ingestion, query Qdrant for a test keyword to ensure relevant chunks are retrievable.
+
+Log ingestion summary (total chunks, API errors) to Neon Postgres for analytics.
+
+Optional Features
+
+Add caching for already ingested chapters to avoid duplicates.
+
+Include CLI script in scripts/ingest.py to run ingestion manually.
+
+Output
+
+Claude should generate:
+
+Python scripts for ingestion and chunking
+
+OpenAI embedding integration
+
+Qdrant vector database insertion logic
+
+Updated FastAPI endpoint /api/chatbot/ingest
+
+Logging to Neon Postgres
+
+Example commands to run ingestion for the whole book or a single chapter

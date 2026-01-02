@@ -1,0 +1,30 @@
+Write Module 1, Chapter 2: “ROS 2 Packages” in the style of a professional robotics textbook and official documentation.
+
+Requirements:
+- Academic, clear, structured explanations suitable for robotics students and AI engineers.
+- Include conceptual diagrams (ASCII), flowcharts, tables, and architecture illustrations.
+- Write like official ROS documentation + O’Reilly robotics books.
+- Cover:
+  • What is a ROS 2 package?
+  • Package directory structure
+  • package.xml explained field-by-field
+  • CMakeLists.txt explained (for C++)
+  • Python package structure for rclpy
+  • Creating packages using `ros2 pkg create` (Python + C++ examples)
+  • Launch files (Python launch system, nodes, parameters)
+  • Parameters and YAML configuration
+  • How packages integrate inside humanoid robotics systems
+  • Best practices (naming, modular architecture, scalability)
+- Add multiple real examples (Python + C++ node creation)
+- Add diagrams showing:
+  • package architecture
+  • dependency flow
+  • launch file node orchestration
+- Include “Note”, “Warning”, and “Tip” blocks using Docusaurus admonitions.
+- Add 5 exercises + 1 small project at the end.
+- Follow Docusaurus Markdown formatting:
+  • Use ##, ### headings
+  • Code blocks with ```python / ```xml / ```bash
+  • Admonitions: :::note, :::tip, :::warning
+  • Tables for comparisons
+- Ensure the chapter feels like official documentation + a robotics textbook combined.

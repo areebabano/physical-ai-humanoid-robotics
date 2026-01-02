@@ -1,0 +1,28 @@
+Write “Module 1 — Chapter 1: ROS 2 Fundamentals” as a professional robotics textbook chapter.
+
+Requirements:
+- Tone: expert, clear, structured, like MIT/Stanford robotics textbooks.
+- Audience: beginner-to-intermediate robotics/AI students.
+- Format: Docusaurus Markdown (headings, subheadings, callouts, tables, code blocks).
+- Include:
+  • Clean chapter introduction and learning objectives.
+  • High-level overview of ROS 2 architecture.
+  • Detailed sections on Nodes, Topics, Services, and Parameters.
+  • URDF and humanoid robot modeling fundamentals.
+  • Python integration using `rclpy` with step-by-step examples.
+  • Real robot scenario examples (e.g., sensors → perception → control).
+  • ASCII diagrams to visually explain concepts (high quality).
+  • Flow diagrams for data movement.
+  • Tables comparing ROS 1 vs ROS 2.
+  • A complete running example project (publisher + subscriber + service).
+  • Humanoid-robot example explaining sensors, joints, and ROS interfaces.
+  • Best practices, common errors, and debugging notes.
+  • End-of-chapter summary.
+  • 8–10 exercises + 2 mini-projects.
+
+Rules:
+- Use only Markdown supported by Docusaurus.
+- Diagrams should be ASCII-based.
+- Code examples must be valid and runnable Python (`rclpy`) and URDF snippets.
+- Use clear section numbering: 1.0, 1.1, 1.2 …
+- Keep language simple but academically precise.

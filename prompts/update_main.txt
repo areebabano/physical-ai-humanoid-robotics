@@ -1,0 +1,43 @@
+You are an expert Docusaurus site architect and technical editor.
+
+Task:
+Edit the existing docusaurus.config.ts file for the book "PHYSICAL AI & HUMANOID ROBOTICS" to create a fully working, clean, professional, and textbook-style site with an attractive UI.
+
+Requirements:
+
+1. Header/Navbar:
+   - Site title: "PHYSICAL AI & HUMANOID ROBOTICS"
+   - Add the book logo before the title
+   - A single clickable link next to the title that goes to the Modules / Overview page. 
+     Ensure this uses the correct doc ID that exists in the project (e.g., module_0_overview)
+   - Include default Docusaurus search bar
+   - Include default GitHub button linking to the book repository
+   - Keep the header layout simple, professional, and functional
+
+2. Hero Section (Landing Page):
+   - Display book title and tagline prominently
+   - Include a short description of the book
+   - Add book-related image(s) prominently
+   - Include a call-to-action button linking to the correct Modules / Overview page
+   - Ensure all links are correct and functional
+   - Make the hero visually appealing and textbook-like
+
+3. Footer:
+   - Clean, professional layout
+   - Include copyright notice
+   - Optional links to GitHub, social media, references
+
+4. Color Scheme:
+   - Clean, professional, textbook-like
+   - Support light and dark mode
+
+5. Other Requirements:
+   - Keep all existing configuration intact (presets, plugins, themeConfig)
+   - Maintain proper TypeScript syntax
+   - Ensure all navbar and hero links actually point to existing docs to avoid "Page Not Found" errors
+   - Output the full updated docusaurus.config.ts file, ready to replace the existing one
+   - Wherever images or icons can improve UI, use them (logo, hero images, book illustrations)
+   - Ensure the site looks polished, professional, and modern while keeping layout simple and user-friendly
+
+Goal:
+The header, hero section, and footer must work correctly on all pages, all links must function, include book-related images and logo, and the overall site should feel like a professional, educational robotics textbook.
