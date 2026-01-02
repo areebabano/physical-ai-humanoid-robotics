@@ -1,13 +1,13 @@
 import React from 'react';
 import clsx from 'clsx';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
-import DocItemPaginator from '@theme/DocItem/Paginator';
-import DocVersionBanner from '@theme/DocVersionBanner';
-import DocVersionBadge from '@theme/DocVersionBadge';
+import DocItemPaginator from '@theme-original/DocItem/Paginator';
+import DocVersionBanner from '@theme-original/DocVersionBanner';
+import DocVersionBadge from '@theme-original/DocVersionBadge';
 import { theme } from '@docusaurus/preset-classic';
-import DocBreadcrumbs from '@theme/DocBreadcrumbs';
-import DocItemFooter from '@theme/DocItem/Footer';
-import DocItemContent from '@theme/DocItem/Content';
+import DocBreadcrumbs from '@theme-original/DocBreadcrumbs';
+import DocItemFooter from '@theme-original/DocItem/Footer';
+import DocItemContent from '@theme-original/DocItem/Content';
 import styles from './styles.module.css';
 
 // Professional DocItem Layout Component

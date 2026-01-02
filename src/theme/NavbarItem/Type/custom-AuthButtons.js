@@ -1,5 +1,4 @@
 import React from 'react';
-import NavbarItem from '@theme/NavbarItem';
 import NavbarItemCustomAuthButtons from '../NavbarItemCustomAuthButtons';
 
 // Register the custom NavbarItem type

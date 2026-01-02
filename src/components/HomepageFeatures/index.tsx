@@ -1,5 +1,4 @@
 import React from 'react';
-import Heading from '@theme/Heading';
 import {
   FaBook,
   FaRobot,
@@ -117,9 +116,9 @@ function Feature({title, Icon, description}: FeatureItem) {
       <div className="feature-icon">
         <Icon />
       </div>
-      <Heading as="h3" className="feature-title">
+      <h3 className="feature-title">
         {title}
-      </Heading>
+      </h3>
       <p className="feature-description">{description}</p>
     </div>
   );
