@@ -22,7 +22,9 @@ class Settings(BaseSettings):
     DB_NAME: str = os.getenv("DB_NAME", "neondb")
 
     # CORS Configuration
-    ALLOWED_ORIGINS: list = ["http://localhost:3000","http://localhost:3001"]  # In production, specify exact origins
+    # ALLOWED_ORIGINS: list = ["http://localhost:3000","http://localhost:3001"]  # In production, specify exact origins
+    ALLOWED_ORIGINS: list = ["*","http://localhost:3000","http://localhost:3001", "https://physical-ai-humanoid-robotics-wheat-alpha.vercel.app/"]  # In production, specify exact origins
+
 
     # Cohere Configuration
     COHERE_API_KEY: str = os.getenv("COHERE_API_KEY")
