@@ -227,7 +227,7 @@ const ChatbotWidget: React.FC = () => {
       try {
         const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
           ? 'http://localhost:8000'
-          : window.location.origin;
+          : 'https://areebahammad-rag-chatbot.hf.space/api/chatbot/chat';
         const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Request timeout')), 60000));
         const fetchPromise = fetch(`${BACKEND_URL}/api/chatbot/chat`, {
           method: 'POST',
